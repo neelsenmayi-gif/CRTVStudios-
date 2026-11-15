@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# TODO domaine : remplacer crtvstudios.fr si le domaine réservé est différent
+Sitemap: https://crtvstudios.fr/sitemap.xml

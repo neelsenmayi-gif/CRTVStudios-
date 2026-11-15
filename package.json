@@ -1,0 +1,9 @@
+{
+  "name": "crtv-studios-site",
+  "private": true,
+  "type": "module",
+  "description": "Site vitrine CRTV Studios (statique + une fonction Cloudflare Pages pour le formulaire). Aucune dépendance.",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

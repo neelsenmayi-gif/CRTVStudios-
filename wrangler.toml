@@ -1,0 +1,4 @@
+# Configuration Cloudflare Pages (aucun build : le site est déjà statique).
+name = "crtv-studios"
+pages_build_output_dir = "./public"
+compatibility_date = "2026-11-01"
