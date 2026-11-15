@@ -330,8 +330,11 @@ body.has-sticky { padding-bottom: 76px; }
 .doc p, .doc li { color: var(--ink-soft); }
 .doc p + p { margin-top: 10px; }
 .doc ul { padding-left: 1.2em; }
-.doc dl { display: grid; grid-template-columns: minmax(130px, 34%) 1fr; gap: 8px 16px; margin: 0; }
+.doc dl { display: grid; grid-template-columns: 1fr; gap: 2px 16px; margin: 0; }
+.doc dd { overflow-wrap: anywhere; }
+.doc dd + dt { margin-top: 10px; }
+@media (min-width: 600px) { .doc dl { grid-template-columns: minmax(150px, 34%) 1fr; gap: 10px 16px; } .doc dd + dt { margin-top: 0; } }
 .doc dt { font-weight: 700; }
 .doc dd { margin: 0; color: var(--ink-soft); }
 .todo { background: #fff2a8; color: #3d3300; padding: 0 .3em; border-radius: 4px; font-weight: 600; }
-.draft { background: var(--ink); color: var(--on-ink); border-radius: 14px; padding: 14px 18px; margin: 8px 0 24px; font-weight: 600; }
+.doc .draft, .draft { background: var(--ink); color: var(--on-ink); border-radius: 14px; padding: 14px 18px; margin: 8px 0 24px; font-weight: 600; }

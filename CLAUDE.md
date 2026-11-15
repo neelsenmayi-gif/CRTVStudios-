@@ -29,8 +29,8 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Réponse aux devis sous 24 h.
 
 ## Charte et ton
-- Logo : lettres noires « liquides » en forme de cercle (assets/logo.png, recadré, fond blanc). Le logo d'origine est blanc sur noir ; la version site est noire sur blanc.
-- Ton : direct, jeune, fiable ; phrases courtes, tutoiement ou vouvoiement à trancher (version actuelle : vouvoiement).
+- Logo : lettres « liquides » en forme de cercle. Original blanc sur noir dans `sources/`. Sur le site : SVG vectorisé (`public/assets/logo.svg` noir, `logo-blanc.svg` blanc), fond transparent, plus besoin de `mix-blend-mode`.
+- Ton : direct, jeune, fiable ; phrases courtes ; vouvoiement (tranché par Neelsen).
 - Éviter les promesses non confirmées et les chiffres inventés.
 
 ## À confirmer / à brancher
@@ -41,7 +41,31 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Mentions légales : à compléter après immatriculation de la SAS.
 - Nom de domaine à réserver.
 
-## État du chantier
-- v1 : page statique `index.html` (HTML/CSS, sans dépendance), à ouvrir directement dans un navigateur.
-- Plan de lancement complet (26 tâches) : tableau « CRTV Studios — Plan de lancement et prospection » dans les artefacts Claude de Neelsen.
-- Business plan : document « CRTV Studios — Questionnaire de cadrage du business plan ».
+## État du chantier (mis à jour le 15/11/2026)
+
+### Fait
+- v1 importée (commit d'origine), puis refonte v2.
+- Structure : `public/` = tout ce qui est publié ; `functions/api/devis.js` = fonction serveur du formulaire (Cloudflare Pages) ; `tests/` (`npm test`) ; `scripts/` (aperçu local, compression vidéo) ; `sources/` (logos d'origine, non publiés).
+- Page d'accueil : index des prix dans le premier écran, grille de prix en grande typo (pièce forte) qui présélectionne l'offre dans le formulaire, bandeau streamers GTA 6, réalisations (emplacements vidéo prêts), méthode en 4 étapes, FAQ, formulaire de devis, barre d'action fixe sur mobile (apparaît après le premier écran, disparaît sur le formulaire).
+- Formulaire : nom, mail, réseau/chaîne, besoin (liste des offres), message, case actualités facultative. Contrôle des champs, anti-spam (champ piège, délai 3 s, origine, Turnstile optionnel), confirmation, repli mailto si l'envoi échoue, fonctionne aussi sans JavaScript (redirection `merci.html` / `erreur.html`).
+- Envoi : API Brevo (mail vers l'adresse pro + ajout du contact). Clés uniquement en variables d'environnement (`.env.example`).
+- Référencement : title, description, Open Graph + image 1200×630, JSON-LD, canonical, sitemap.xml, robots.txt, favicon SVG + PNG, manifest.
+- Pages légales provisoires (`mentions-legales.html`, `confidentialite.html`) avec champs `[À COMPLÉTER]`.
+- Statistiques : emplacement Plausible prêt (commenté), événements personnalisés déjà émis. Lien bio avec UTM dans `DEPLOIEMENT.md`.
+- Contrôles du 15/11 : Lighthouse accueil mobile 99/100/100/100, bureau 100/100/100/100 ; axe 0 violation ; aucun débordement de 320 à 1440 px ; liens internes OK ; parcours formulaire testé (succès, erreurs, échec, sans JS).
+
+### Décisions
+- Police Bricolage Grotesque auto-hébergée et réduite (pas d'appel à Google Fonts : vitesse et RGPD).
+- Aucun framework ni dépendance d'exécution. CSS et JS en fichiers séparés (cache + CSP stricte sans `unsafe-inline`).
+- Noms des clients retirés tant que leur accord n'est pas confirmé : cartes anonymisées (« Institut de beauté, Suisse »…).
+- Phrase de remboursement non publiée (commentaire dans `index.html`) en attente de Lucas et du comptable.
+- Contenu des niveaux YouTube : seuls les prix sont affichés, le détail « dans le devis ».
+- Hébergement recommandé : Cloudflare Pages (voir `DEPLOIEMENT.md`). Rien n'est publié ni acheté sans accord.
+- Les sites de référence (whop.com, pomelofactory.com) sont bloqués par le réseau de l'environnement de travail : pas encore analysés.
+
+### Reste à faire
+- Infos de Neelsen : URL Instagram, adresse mail pro, nom de domaine, accord des clients + vidéos, contenu des niveaux YouTube, validation de la phrase de remboursement.
+- Remplacer les `TODO` (`grep -rn TODO public/`).
+- Mise en ligne (après accord) : Cloudflare Pages, domaine, Brevo (domaine authentifié, expéditeur, clé, listes), Plausible.
+- Après immatriculation de la SAS (janvier 2027) : compléter les pages légales.
+- Analyser les références dès qu'elles sont accessibles (captures ou accès réseau).
