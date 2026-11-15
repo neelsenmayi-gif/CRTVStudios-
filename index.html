@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRTV Studios — Vos vidéos courtes, montées et livrées</title>
+<meta name="description" content="CRTV Studios produit vos shorts, reels, clips de streams et vidéos YouTube. Prix affichés, devis sous 24 h, livraison contrôlée.">
+<meta property="og:title" content="CRTV Studios">
+<meta property="og:description" content="Shorts, reels, clipping et vidéos YouTube, de la demande à la livraison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eef0f3;
+    --ink: #0d0f1a;
+    --ink-soft: #4a4f62;
+    --blue: #2f2bff;
+    --blue-wash: #dcdcff;
+    --line: #c9cdd8;
+    --gutter: clamp(20px, 5vw, 56px);
+    --max: 1120px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    font-variation-settings: "wdth" 100;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  h1, h2, h3 { margin: 0; font-weight: 800; line-height: 1; letter-spacing: -0.03em; font-variation-settings: "wdth" 80; }
+
+  /* Header */
+  .top { display: flex; align-items: center; justify-content: space-between; padding-block: 18px; }
+  .brand { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; text-decoration: none; font-variation-settings: "wdth" 80; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 48px; padding: 0 24px; border-radius: 999px;
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    border: 2px solid var(--ink); background: var(--ink); color: var(--paper);
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .btn:hover { background: var(--blue); border-color: var(--blue); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .btn.small { min-height: 40px; padding: 0 18px; font-size: .95rem; }
+
+  /* Hero */
+  .hero { display: grid; gap: 28px; padding-block: 12px 56px; align-items: center; }
+  .hero-logo { justify-self: center; width: min(82vw, 420px); }
+  .hero-logo img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+  .hero h1 { font-size: clamp(2.7rem, 11.5vw, 6.2rem); }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .lede { margin: 20px 0 0; max-width: 34em; font-size: 1.15rem; color: var(--ink-soft); }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  @media (min-width: 860px) {
+    .hero { grid-template-columns: 1.25fr .75fr; gap: 56px; padding-block: 40px 88px; }
+    .hero-logo { justify-self: end; width: 100%; max-width: 400px; }
+  }
+
+  /* Section scaffolding */
+  section { padding-block: 64px; border-top: 2px solid var(--ink); }
+  .sec-head { display: grid; gap: 12px; margin-bottom: 36px; }
+  .sec-head h2 { font-size: clamp(2.1rem, 7vw, 3.6rem); }
+  .sec-head p { margin: 0; max-width: 36em; color: var(--ink-soft); }
+  @media (min-width: 860px) { .sec-head { grid-template-columns: 1fr 1fr; align-items: end; } }
+
+  /* Rate card */
+  .group { margin-top: 40px; }
+  .group:first-of-type { margin-top: 0; }
+  .group h3 { font-size: 1.15rem; letter-spacing: -0.01em; font-variation-settings: "wdth" 100; margin-bottom: 4px; }
+  .group > p { margin: 0 0 8px; color: var(--ink-soft); font-size: .98rem; }
+  .row {
+    display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: baseline;
+    padding-block: 20px; border-bottom: 1px solid var(--line);
+  }
+  .row:first-of-type { border-top: 1px solid var(--line); }
+  .row .name { font-size: clamp(1.7rem, 6vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; font-variation-settings: "wdth" 80; }
+  .row .price { font-size: clamp(1.7rem, 6vw, 2.6rem); font-weight: 800; color: var(--blue); letter-spacing: -0.03em; line-height: 1.02; text-align: right; font-variation-settings: "wdth" 80; white-space: nowrap; }
+  .row .price small { font-size: .9rem; font-weight: 600; color: var(--ink-soft); letter-spacing: 0; margin-right: 6px; }
+  .row .desc { grid-column: 1 / -1; margin: 0; color: var(--ink-soft); max-width: 40em; }
+  .note { margin: 24px 0 0; font-size: .95rem; color: var(--ink-soft); }
+
+  /* Réalisations */
+  .reels { display: grid; grid-auto-flow: column; grid-auto-columns: min(64vw, 260px); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scrollbar-width: thin; }
+  .reel { scroll-snap-align: start; aspect-ratio: 9 / 16; border-radius: 20px; background: var(--ink); color: var(--paper); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .reel:nth-child(2) { background: var(--blue); }
+  .reel:nth-child(3) { background: var(--blue-wash); color: var(--ink); }
+  .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .reel b { font-size: 1.9rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; font-variation-settings: "wdth" 80; position: relative; }
+  .reel span { font-size: .95rem; position: relative; }
+  @media (min-width: 860px) {
+    .reels { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; margin-inline: 0; padding-inline: 0; }
+  }
+
+  /* Méthode */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+  .steps li { counter-increment: step; display: grid; grid-template-columns: 56px 1fr; gap: 8px 16px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+  .steps li:first-child { border-top: 1px solid var(--line); }
+  .steps li::before { content: counter(step); font-size: 2.6rem; font-weight: 800; line-height: .9; color: var(--blue); font-variation-settings: "wdth" 80; }
+  .steps h3 { font-size: 1.5rem; letter-spacing: -0.02em; }
+  .steps p { grid-column: 2; margin: 4px 0 0; color: var(--ink-soft); max-width: 36em; }
+  @media (min-width: 860px) {
+    .steps { grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .steps li { grid-template-columns: 1fr; border: 0 !important; padding: 0; border-top: 2px solid var(--ink) !important; padding-top: 18px; }
+    .steps p { grid-column: 1; }
+  }
+
+  /* Contact */
+  .contact { background: var(--ink); color: var(--paper); border-top: 0; }
+  .contact h2 { font-size: clamp(2.6rem, 10vw, 6rem); }
+  .contact p { color: #b9bdd0; max-width: 32em; margin: 20px 0 0; }
+  .contact .btn { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .contact .btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .contact .btn.ghost { background: transparent; color: var(--paper); }
+  .contact .btn.ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+  footer { background: var(--ink); color: #9ea3ba; padding-block: 0 40px; font-size: .92rem; }
+  footer .wrap { border-top: 1px solid #2a2e45; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="brand" href="#">CRTV Studios</a>
+  <!-- TODO: remplacer par l'adresse mail pro -->
+  <a class="btn small" href="mailto:contact@crtvstudios.fr?subject=Demande%20de%20devis">Demander un devis</a>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Vos vidéos courtes, montées et livrées.</h1>
+      <p class="lede">Shorts, reels, clips de streams et vidéos YouTube. Vous nous envoyez vos rushs, une équipe de monteurs s'en occupe, et nous relisons chaque vidéo avant de vous la rendre.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:contact@crtvstudios.fr?subject=Demande%20de%20devis">Demander un devis</a>
+        <!-- TODO: remplacer par le lien du compte Instagram -->
+        <a class="btn ghost" href="https://instagram.com/">Écrire en DM Instagram</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <img src="assets/logo.png" alt="Logo CRTV Studios : lettres noires fondantes formant un cercle" width="519" height="508">
+    </div>
+  </div>
+
+  <section id="offres">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Les prix sont affichés.</h2>
+        <p>Tarifs hors taxes. Le paiement se fait avant le lancement de la commande.</p>
+      </div>
+
+      <div class="group">
+        <h3>Shorts et reels</h3>
+        <p>Pour publier régulièrement sur TikTok, Instagram et YouTube Shorts.</p>
+        <div class="row">
+          <span class="name">Short Solo</span>
+          <span class="price">65 €</span>
+          <p class="desc">Un short monté, livré sous 48 h.</p>
+        </div>
+        <div class="row">
+          <span class="name">Pack Boost</span>
+          <span class="price">250 €</span>
+          <p class="desc">Cinq shorts, livrés sous 5 jours.</p>
+        </div>
+        <div class="row">
+          <span class="name">Pack Pro</span>
+          <span class="price">480 €</span>
+          <p class="desc">Huit shorts publicitaires, de quoi publier deux fois par semaine. Motion design, mixage audio et effets inclus.</p>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3>Clipping</h3>
+        <p>Vos streams, vlogs et vidéos longues découpés en clips courts, livrés par lots.</p>
+        <div class="row">
+          <span class="name">Clipping 15</span>
+          <span class="price">350 €</span>
+          <p class="desc">Quinze clips, sous-titres animés et effets sonores inclus.</p>
+        </div>
+        <div class="row">
+          <span class="name">Clipping 30</span>
+          <span class="price">520 €</span>
+          <p class="desc">Trente clips, pour tenir un rythme de publication quotidien.</p>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3>Vidéos YouTube et projets sur mesure</h3>
+        <p>Dérushage, étalonnage, sous-titres, mixage et motion design.</p>
+        <div class="row">
+          <span class="name">Vidéo YouTube</span>
+          <span class="price"><small>dès</small>240 €</span>
+          <p class="desc">Trois niveaux de finition : Simple, Standard et Premium. Nous vous conseillons selon votre chaîne.</p>
+        </div>
+        <div class="row">
+          <span class="name">Sur mesure</span>
+          <span class="price">sur devis</span>
+          <p class="desc">Film, journée de tournage, collaboration publicitaire, contenu professionnel de plus grande envergure.</p>
+        </div>
+      </div>
+
+      <p class="note">Les gros projets se règlent en deux fois, moitié à la commande et moitié à la livraison.</p>
+    </div>
+  </section>
+
+  <section id="realisations">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Déjà au travail pour eux.</h2>
+        <p>Un institut de beauté, une agence de créatrices et un streamer : trois formats, un même niveau d'exigence.</p>
+      </div>
+      <!-- TODO: ajouter les vidéos (<video> dans chaque .reel) et vérifier l'accord des clients -->
+      <div class="reels">
+        <article class="reel"><b>Luna Esthétique</b><span>Reel Instagram pour un institut de beauté</span></article>
+        <article class="reel"><b>Andri Sogood</b><span>Clips de ses streams Twitch</span></article>
+        <article class="reel"><b>Bella Consulting</b><span>Contenus pour une agence de créatrices beauté</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="methode">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Comment ça se passe.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Vous nous écrivez</h3><p>Vos rushs, vos références, le rythme de publication que vous visez.</p></li>
+        <li><h3>Devis sous 24 h</h3><p>Un prix clair, un délai annoncé, et vous validez.</p></li>
+        <li><h3>Un monteur s'en charge</h3><p>Un monteur freelance choisi pour votre style de contenu.</p></li>
+        <li><h3>Nous relisons, puis livrons</h3><p>Chaque vidéo est vérifiée par CRTV avant de vous parvenir.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Parlons de votre prochaine vidéo.</h2>
+      <p>Dites-nous ce que vous publiez aujourd'hui et ce que vous voulez publier demain. Nous répondons sous 24 h.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:contact@crtvstudios.fr?subject=Demande%20de%20devis">Demander un devis</a>
+        <a class="btn ghost" href="https://instagram.com/">Écrire en DM Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>CRTV Studios, Île-de-France. Clients en France, Suisse et Belgique.</span>
+    <!-- TODO: mentions légales après immatriculation de la SAS -->
+    <span>Site en construction</span>
+  </div>
+</footer>
+
+</body>
+</html>
