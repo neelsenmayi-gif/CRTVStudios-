@@ -1,20 +1,145 @@
 /* CRTV Studios — comportements de la page (sans dépendance).
-   - sélection d'une offre depuis la grille de prix
+   - mouvement : logo qui se range dans l'en-tête, mots qui s'allument, révélations,
+     reflets qui suivent le pointeur (tout est coupé si l'utilisateur réduit les animations)
+   - sélection d'une offre depuis les cartes de prix
    - formulaire de devis : contrôle des champs, envoi, confirmation
    - vidéos : chargement différé, lecture au clic
-   - barre d'action mobile masquée quand le formulaire est à l'écran
-   - événements de statistiques (Plausible, si activé) */
+   - barre d'action mobile, événements de statistiques (Plausible, si activé) */
 (function () {
   "use strict";
-  document.documentElement.classList.add("js");
+  var root = document.documentElement;
+  root.classList.add("js");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce) root.classList.add("motion");
 
   var MAIL = "contact@crtvstudios.fr"; // TODO mail pro : garder en phase avec index.html
 
   function track(name, props) {
     try { if (typeof window.plausible === "function") window.plausible(name, props ? { props: props } : undefined); } catch (e) { /* stats facultatives */ }
   }
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
 
-  /* ---------- Offre présélectionnée ---------- */
+  /* =========================================================
+     Mouvement lié au défilement
+     ========================================================= */
+  var header = document.getElementById("top");
+  var fly = document.querySelector(".fly");
+  var flyReflect = fly && fly.querySelector(".reflect");
+  var heroMark = document.querySelector("#hero-logo .mark-wrap");
+  var brand = document.querySelector(".brand");
+  var geo = null;
+
+  function measure() {
+    if (!fly || !heroMark || !brand || reduce) return;
+    var y = window.scrollY;
+    var a = heroMark.getBoundingClientRect();
+    var b = brand.getBoundingClientRect();
+    geo = {
+      left0: a.left, top0: a.top + y, w0: a.width, h0: a.width * 963 / 935,
+      left1: b.left, top1: b.top, w1: b.width
+    };
+    fly.style.width = geo.w0 + "px";
+  }
+
+  // Manifeste : découpe en mots
+  var manifest = document.querySelector("[data-words]");
+  var words = [];
+  if (manifest) {
+    var walk = function (node, hot) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+        if (child.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var s = document.createElement("span");
+            s.className = "w" + (hot ? " hot" : "");
+            s.textContent = part;
+            words.push(s);
+            frag.appendChild(s);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1) {
+          walk(child, hot || child.tagName === "EM");
+        }
+      });
+    };
+    walk(manifest, false);
+    if (reduce) words.forEach(function (w) { w.classList.add("on"); });
+  }
+
+  var scrollers = Array.prototype.slice.call(document.querySelectorAll("[data-scroll]"));
+
+  function frame() {
+    ticking = false;
+    var y = window.scrollY, vh = window.innerHeight;
+
+    if (header) header.classList.toggle("is-solid", y > vh * 0.55);
+
+    if (geo && !reduce) {
+      var dist = Math.max(1, geo.top0 + geo.h0 * 0.55 - geo.top1);
+      var p = clamp(y / dist), e = ease(p);
+      var x = lerp(geo.left0, geo.left1, e);
+      var t = lerp(geo.top0 - y, geo.top1, e);
+      var s = lerp(geo.w0, geo.w1, e) / geo.w0;
+      fly.style.transform = "translate3d(" + x.toFixed(2) + "px," + t.toFixed(2) + "px,0) scale(" + s.toFixed(4) + ")";
+      if (flyReflect) flyReflect.style.opacity = String(Math.max(0, .32 * (1 - p * 2.5)));
+    }
+
+    if (words.length && !reduce) {
+      var r = manifest.getBoundingClientRect();
+      var prog = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35));
+      var lit = Math.round(prog * words.length);
+      for (var i = 0; i < words.length; i++) words[i].classList.toggle("on", i < lit);
+    }
+
+    if (!reduce) {
+      scrollers.forEach(function (el) {
+        var rr = el.getBoundingClientRect();
+        var v = el.classList.contains("steps")
+          ? clamp((vh * 0.8 - rr.top) / (rr.height + vh * 0.2))
+          : clamp((vh - rr.top) / (vh + rr.height));
+        el.style.setProperty("--p", v.toFixed(4));
+      });
+    }
+  }
+  var ticking = false;
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+
+  measure();
+  frame();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { measure(); onScroll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { measure(); onScroll(); });
+  window.addEventListener("load", function () { measure(); onScroll(); });
+
+  // Révélations à l'entrée dans l'écran
+  var reveals = document.querySelectorAll(".reveal");
+  if (!reduce && "IntersectionObserver" in window) {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-in"); rio.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    reveals.forEach(function (el) { rio.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-in"); });
+  }
+
+  // Reflet qui suit le pointeur sur les cartes
+  if (!reduce) {
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.addEventListener("pointermove", function (ev) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (ev.clientX - r.left) + "px");
+        card.style.setProperty("--my", (ev.clientY - r.top) + "px");
+      });
+    });
+  }
+
+  /* =========================================================
+     Offre présélectionnée
+     ========================================================= */
   var select = document.getElementById("f-besoin");
   document.addEventListener("click", function (ev) {
     var link = ev.target.closest && ev.target.closest("[data-offre], [data-cta]");
@@ -27,14 +152,15 @@
     }
     var cta = link.getAttribute("data-cta");
     if (cta) track("Clic CTA", { position: cta });
-    // Placer le focus dans le formulaire après le défilement vers #devis
-    if (link.getAttribute("href") === "#devis") {
-      var target = offre ? document.getElementById("f-nom") : null;
+    if (link.getAttribute("href") === "#devis" && offre) {
+      var target = document.getElementById("f-nom");
       if (target) setTimeout(function () { target.focus({ preventScroll: true }); }, 0);
     }
   });
 
-  /* ---------- Formulaire ---------- */
+  /* =========================================================
+     Formulaire
+     ========================================================= */
   var form = document.getElementById("devis-form");
   var status = document.getElementById("form-status");
   var startedAt = Date.now();
@@ -85,10 +211,10 @@
       holder.setAttribute("data-sitekey", sitekey);
       holder.setAttribute("data-language", "fr");
       holder.setAttribute("data-theme", "dark");
-      var s = document.createElement("script");
-      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-      s.async = true; s.defer = true;
-      document.head.appendChild(s);
+      var sc = document.createElement("script");
+      sc.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      sc.async = true; sc.defer = true;
+      document.head.appendChild(sc);
     }
 
     form.addEventListener("submit", function (ev) {
@@ -117,14 +243,14 @@
         showSuccess(data);
       }).catch(function (err) {
         button.disabled = false; button.textContent = "Envoyer ma demande";
-        var subject = encodeURIComponent("Demande de devis — " + (data.nom || ""));
-        var bodyTxt = encodeURIComponent("Offre : " + (data.besoin || "") + "\nRéseau : " + (data.reseau || "") + "\n\n" + (data.message || ""));
-        var msg = err && err.message === "validation"
+        var isValidation = err && err.message === "validation";
+        status.className = "form-status is-error";
+        status.textContent = isValidation
           ? "Certains champs ne sont pas valides. Vérifiez-les et réessayez."
           : "L'envoi n'a pas abouti. Réessayez dans un instant, ou écrivez-nous directement : ";
-        status.className = "form-status is-error";
-        status.textContent = msg;
-        if (!(err && err.message === "validation")) {
+        if (!isValidation) {
+          var subject = encodeURIComponent("Demande de devis — " + (data.nom || ""));
+          var bodyTxt = encodeURIComponent("Offre : " + (data.besoin || "") + "\nRéseau : " + (data.reseau || "") + "\n\n" + (data.message || ""));
           var a = document.createElement("a");
           a.href = "mailto:" + MAIL + "?subject=" + subject + "&body=" + bodyTxt;
           a.textContent = MAIL;
@@ -154,7 +280,9 @@
     h.focus();
   }
 
-  /* ---------- Vidéos ---------- */
+  /* =========================================================
+     Vidéos
+     ========================================================= */
   var reels = Array.prototype.slice.call(document.querySelectorAll(".reel video"));
   reels.forEach(function (video) {
     video.removeAttribute("controls"); // le bouton lecture remplace les contrôles jusqu'au premier clic
@@ -165,39 +293,40 @@
       reels.forEach(function (other) { if (other !== video && !other.paused) other.pause(); });
       video.setAttribute("controls", "");
       card.classList.add("is-playing");
-      var p = video.play();
-      if (p && p.catch) p.catch(function () { /* lecture bloquée : les contrôles restent visibles */ });
+      var pr = video.play();
+      if (pr && pr.catch) pr.catch(function () { /* lecture bloquée : les contrôles restent visibles */ });
       video.focus();
       track("Lecture vidéo", { video: btn.getAttribute("aria-label") || "" });
     });
   });
-  // Affiches chargées seulement à l'approche de la section
   var posters = document.querySelectorAll("video[data-poster]");
   if (posters.length) {
     var setPoster = function (v) { v.setAttribute("poster", v.getAttribute("data-poster")); v.removeAttribute("data-poster"); };
     if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { setPoster(e.target); io.unobserve(e.target); } });
+      var pio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { setPoster(en.target); pio.unobserve(en.target); } });
       }, { rootMargin: "400px" });
-      posters.forEach(function (v) { io.observe(v); });
+      posters.forEach(function (v) { pio.observe(v); });
     } else {
       posters.forEach(setPoster);
     }
   }
 
-  /* ---------- Barre d'action mobile ---------- */
+  /* =========================================================
+     Barre d'action mobile
+     ========================================================= */
   var sticky = document.getElementById("sticky-cta");
   var devis = document.getElementById("devis");
   var footer = document.querySelector("footer");
+  var heroCta = document.querySelector(".hero .cta");
   if (sticky && devis && "IntersectionObserver" in window) {
     var visible = new Set();
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); });
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target); });
       sticky.hidden = visible.size > 0;
     });
-    obs.observe(devis);
-    if (footer) obs.observe(footer);
-    var heroCta = document.querySelector(".hero .cta");
-    if (heroCta) obs.observe(heroCta); // pas de doublon : la barre apparaît une fois le bouton du haut dépassé
+    sio.observe(devis);
+    if (footer) sio.observe(footer);
+    if (heroCta) sio.observe(heroCta);
   }
 })();

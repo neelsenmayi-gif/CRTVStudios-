@@ -29,6 +29,9 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Réponse aux devis sous 24 h.
 
 ## Charte et ton
+- **v3 (16/11/2026), demandée par Neelsen : site sombre et animé, « devanture noire », style corporate type motion design.** Fond nuit (#05060d), blanc sur noir et blanc sur bleu (nuances de bleu nuit à bleu électrique #2f2bff), reflets et jeux de lumière, touche de couleur en dégradé fuchsia #ff2f8e → abricot #ff9c55 sur le logo, les prix et les survols. Cette demande remplace l'ancienne règle « pas d'animations décoratives » ; `prefers-reduced-motion` coupe toujours tout mouvement.
+- Mouvement : le logo se range dans l'en-tête au défilement (avec reflet au sol), reflet lumineux qui balaie le logo, lumières lentes dans le hero, bandeau défilant des formats, mots du manifeste qui s'allument au scroll, révélations, reflet qui suit le pointeur sur les cartes, ligne de progression de la méthode.
+- Offres séparées en 3 volets, comme le business plan (section 6.1) : Offre 1 Jeunes créateurs (Short Solo, Pack Boost, Pack Pro) ; Offre 2 Packs de clipping (15, 30) ; Offre 3 Projets sur mesure (Vidéo YouTube « dès 240 € », collaboration publicitaire et contenus d'envergure sur devis, plus une ligne « photo, graphisme et logo sur devis »). Choix validés par Neelsen le 16/11.
 - Logo : lettres « liquides » en forme de cercle. Original blanc sur noir dans `sources/`. Sur le site : SVG vectorisé (`public/assets/logo.svg` noir, `logo-blanc.svg` blanc), fond transparent, plus besoin de `mix-blend-mode`.
 - Ton : direct, jeune, fiable ; phrases courtes ; vouvoiement (tranché par Neelsen).
 - Éviter les promesses non confirmées et les chiffres inventés.
@@ -41,10 +44,10 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Mentions légales : à compléter après immatriculation de la SAS.
 - Nom de domaine à réserver.
 
-## État du chantier (mis à jour le 15/11/2026)
+## État du chantier (mis à jour le 16/11/2026)
 
 ### Fait
-- v1 importée (commit d'origine), puis refonte v2.
+- v1 importée (commit d'origine), refonte v2 (claire), puis v3 sombre et animée (16/11), reconstruite de zéro sur la même base technique.
 - Structure : `public/` = tout ce qui est publié ; `functions/api/devis.js` = fonction serveur du formulaire (Cloudflare Pages) ; `tests/` (`npm test`) ; `scripts/` (aperçu local, compression vidéo) ; `sources/` (logos d'origine, non publiés).
 - Page d'accueil : index des prix dans le premier écran, grille de prix en grande typo (pièce forte) qui présélectionne l'offre dans le formulaire, bandeau streamers GTA 6, réalisations (emplacements vidéo prêts), méthode en 4 étapes, FAQ, formulaire de devis, barre d'action fixe sur mobile (apparaît après le premier écran, disparaît sur le formulaire).
 - Formulaire : nom, mail, réseau/chaîne, besoin (liste des offres), message, case actualités facultative. Contrôle des champs, anti-spam (champ piège, délai 3 s, origine, Turnstile optionnel), confirmation, repli mailto si l'envoi échoue, fonctionne aussi sans JavaScript (redirection `merci.html` / `erreur.html`).
@@ -52,7 +55,8 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Référencement : title, description, Open Graph + image 1200×630, JSON-LD, canonical, sitemap.xml, robots.txt, favicon SVG + PNG, manifest.
 - Pages légales provisoires (`mentions-legales.html`, `confidentialite.html`) avec champs `[À COMPLÉTER]`.
 - Statistiques : emplacement Plausible prêt (commenté), événements personnalisés déjà émis. Lien bio avec UTM dans `DEPLOIEMENT.md`.
-- Contrôles du 15/11 : Lighthouse accueil mobile 99/100/100/100, bureau 100/100/100/100 ; axe 0 violation ; aucun débordement de 320 à 1440 px ; liens internes OK ; parcours formulaire testé (succès, erreurs, échec, sans JS).
+- Contrôles v3 du 16/11 : Lighthouse accueil mobile 95/100/100/100, bureau 100/100/100/100 ; axe 0 violation (animations actives ou réduites) ; aucun débordement de 320 à 1440 px ; parcours formulaire testé.
+- Aperçu privé consultable : https://claude.ai/artifact/9rU9tzDokt694c9zUUSQW4 (le formulaire n'y envoie rien).
 
 ### Décisions
 - Police Bricolage Grotesque auto-hébergée et réduite (pas d'appel à Google Fonts : vitesse et RGPD).
@@ -61,7 +65,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Phrase de remboursement non publiée (commentaire dans `index.html`) en attente de Lucas et du comptable.
 - Contenu des niveaux YouTube : seuls les prix sont affichés, le détail « dans le devis ».
 - Hébergement recommandé : Cloudflare Pages (voir `DEPLOIEMENT.md`). Rien n'est publié ni acheté sans accord.
-- Les sites de référence (whop.com, pomelofactory.com) sont bloqués par le réseau de l'environnement de travail : pas encore analysés.
+- Les sites de référence (whop.com, pomelofactory.com) sont bloqués par le réseau de l'environnement de travail. Accès réseau à pomelofactory.com proposé le 16/11 puis refusé : la v3 est construite d'après la description de Neelsen.
 
 ### Reste à faire
 - Infos de Neelsen : URL Instagram, adresse mail pro, nom de domaine, accord des clients + vidéos, contenu des niveaux YouTube, validation de la phrase de remboursement.
