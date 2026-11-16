@@ -48,6 +48,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 
 ### Fait
 - v1 importée (commit d'origine), refonte v2 (claire), puis v3 sombre et animée (16/11), reconstruite de zéro sur la même base technique.
+- **v3 validée par Neelsen le 16/11** : direction retenue. Reste des retouches de textes et d'effets, à faire au fil de ses retours, sans changer de direction.
 - Structure : `public/` = tout ce qui est publié ; `functions/api/devis.js` = fonction serveur du formulaire (Cloudflare Pages) ; `tests/` (`npm test`) ; `scripts/` (aperçu local, compression vidéo) ; `sources/` (logos d'origine, non publiés).
 - Page d'accueil : index des prix dans le premier écran, grille de prix en grande typo (pièce forte) qui présélectionne l'offre dans le formulaire, bandeau streamers GTA 6, réalisations (emplacements vidéo prêts), méthode en 4 étapes, FAQ, formulaire de devis, barre d'action fixe sur mobile (apparaît après le premier écran, disparaît sur le formulaire).
 - Formulaire : nom, mail, réseau/chaîne, besoin (liste des offres), message, case actualités facultative. Contrôle des champs, anti-spam (champ piège, délai 3 s, origine, Turnstile optionnel), confirmation, repli mailto si l'envoi échoue, fonctionne aussi sans JavaScript (redirection `merci.html` / `erreur.html`).
