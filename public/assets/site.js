@@ -78,15 +78,7 @@
 
     if (header) header.classList.toggle("is-solid", y > vh * 0.55);
 
-    if (geo && !reduce) {
-      var dist = Math.max(1, geo.top0 + geo.h0 * 0.55 - geo.top1);
-      var p = clamp(y / dist), e = ease(p);
-      var x = lerp(geo.left0, geo.left1, e);
-      var t = lerp(geo.top0 - y, geo.top1, e);
-      var s = lerp(geo.w0, geo.w1, e) / geo.w0;
-      fly.style.transform = "translate3d(" + x.toFixed(2) + "px," + t.toFixed(2) + "px,0) scale(" + s.toFixed(4) + ")";
-      if (flyReflect) flyReflect.style.opacity = String(Math.max(0, .32 * (1 - p * 2.5)));
-    }
+    if (geo && !reduce) startFly();
 
     if (words.length && !reduce) {
       var r = manifest.getBoundingClientRect();
@@ -105,10 +97,32 @@
       });
     }
   }
+  /* Logo volant : il suit le défilement avec un léger amorti (interpolation à chaque image),
+     ce qui lisse les à-coups du défilement au doigt. */
+  var flyY = window.scrollY, flyRunning = false;
+  function drawFly(y) {
+    var dist = Math.max(1, geo.top0 + geo.h0 * 0.55 - geo.top1);
+    var p = clamp(y / dist), e = ease(p);
+    var x = lerp(geo.left0, geo.left1, e);
+    var t = lerp(geo.top0 - y, geo.top1, e);
+    var k = lerp(geo.w0, geo.w1, e) / geo.w0;
+    fly.style.transform = "translate3d(" + x.toFixed(2) + "px," + t.toFixed(2) + "px,0) scale(" + k.toFixed(4) + ")";
+    if (flyReflect) flyReflect.style.opacity = String(Math.max(0, .32 * (1 - p * 2.5)).toFixed(3));
+  }
+  function flyStep() {
+    var target = window.scrollY;
+    flyY += (target - flyY) * 0.2;
+    if (Math.abs(target - flyY) < 0.25) flyY = target;
+    drawFly(flyY);
+    if (flyY !== target) requestAnimationFrame(flyStep); else flyRunning = false;
+  }
+  function startFly() { if (!flyRunning) { flyRunning = true; requestAnimationFrame(flyStep); } }
+
   var ticking = false;
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
 
   measure();
+  if (geo) { flyY = window.scrollY; drawFly(flyY); }
   frame();
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", function () { measure(); onScroll(); });
