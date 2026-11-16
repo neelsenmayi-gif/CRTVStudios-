@@ -65,7 +65,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Phrase de remboursement non publiée (commentaire dans `index.html`) en attente de Lucas et du comptable.
 - Contenu des niveaux YouTube : seuls les prix sont affichés, le détail « dans le devis ».
 - Hébergement recommandé : Cloudflare Pages (voir `DEPLOIEMENT.md`). Rien n'est publié ni acheté sans accord.
-- Les sites de référence (whop.com, pomelofactory.com) sont bloqués par le réseau de l'environnement de travail. Accès réseau à pomelofactory.com proposé le 16/11 puis refusé : la v3 est construite d'après la description de Neelsen.
+- Les sites de référence (whop.com, pomelofactory.com) sont bloqués par le réseau de l'environnement de travail. Accès réseau à pomelofactory.com proposé le 16/11 puis refusé : la v3 est construite d'après la description de Neelsen. Nouvelle référence flashy-editing.fr (16/11) : également inaccessible, accès réseau refusé ; attendre des captures.
 
 ### Reste à faire
 - Infos de Neelsen : URL Instagram, adresse mail pro, nom de domaine, accord des clients + vidéos, contenu des niveaux YouTube, validation de la phrase de remboursement.
