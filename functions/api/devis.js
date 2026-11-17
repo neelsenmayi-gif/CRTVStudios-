@@ -122,7 +122,7 @@ async function sendNotification(env, d) {
     method: "POST",
     headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({
-      sender: { email: env.SENDER_EMAIL, name: env.SENDER_NAME || "Site CRTV Studios" },
+      sender: { email: env.SENDER_EMAIL, name: env.SENDER_NAME || "CRTV Studios" },
       to: [{ email: env.CONTACT_TO_EMAIL }],
       ...copies(env),
       replyTo: { email: d.email, name: d.nom },
