@@ -38,7 +38,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Éviter les promesses non confirmées et les chiffres inventés.
 
 ## À confirmer / à brancher
-- Instagram : **@crtvstudios_** (https://www.instagram.com/crtvstudios_/), branché le 17/11 (lien DM via ig.me/m/crtvstudios_, pied de page, JSON-LD). Domaine **crtvstudios.fr** acheté chez IONOS et adresse **contact@crtvstudios.fr** créée chez IONOS par Neelsen le 17/11 (déjà utilisés partout sur le site ; TODO retirés). Mail : boîte IONOS conservée, ajoutée par Neelsen dans Gmail en IMAP le 17/11 (pas de Google Workspace pour l'instant). À garder intacte lors du passage du DNS chez Cloudflare (recopier à l'identique les enregistrements mail d'IONOS : MX, SPF, autodiscover).
+- Instagram : **@crtvstudios_** (https://www.instagram.com/crtvstudios_/), branché le 17/11 (lien DM via ig.me/m/crtvstudios_, pied de page, JSON-LD). Domaine **crtvstudios.fr** acheté chez IONOS et adresse **contact@crtvstudios.fr** créée chez IONOS par Neelsen le 17/11 (déjà utilisés partout sur le site ; TODO retirés). Mail : boîte IONOS conservée, ajoutée par Neelsen dans Gmail puis dans Outlook en IMAP le 17/11 (imap.ionos.fr 993 SSL, smtp.ionos.fr 465 SSL ; pas de Google Workspace ni Microsoft 365). Mails automatiques prévus via Brevo. À garder intacte lors du passage du DNS chez Cloudflare (recopier à l'identique les enregistrements mail d'IONOS : MX, SPF, autodiscover).
 - Accord des clients pour afficher leur nom et leurs vidéos ; vidéos de réalisations à ajouter.
 - Contenu exact des packs YouTube ; promesse de remboursement à valider avec Lucas et le comptable.
 - Formulaire de devis relié à Brevo (étape suivante du plan).
