@@ -38,7 +38,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Éviter les promesses non confirmées et les chiffres inventés.
 
 ## À confirmer / à brancher
-- Lien Instagram et adresse mail pro (placeholders dans index.html, repérés par `TODO`).
+- Instagram : **@crtvstudios_** (https://www.instagram.com/crtvstudios_/), branché le 17/11 (lien DM via ig.me/m/crtvstudios_, pied de page, JSON-LD). Adresse mail pro : encore provisoire (`contact@crtvstudios.fr`, repérée par `TODO`).
 - Accord des clients pour afficher leur nom et leurs vidéos ; vidéos de réalisations à ajouter.
 - Contenu exact des packs YouTube ; promesse de remboursement à valider avec Lucas et le comptable.
 - Formulaire de devis relié à Brevo (étape suivante du plan).
@@ -76,7 +76,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Les sites de référence (whop.com, pomelofactory.com) sont bloqués par le réseau de l'environnement de travail. Accès réseau à pomelofactory.com proposé le 16/11 puis refusé : la v3 est construite d'après la description de Neelsen. Nouvelle référence flashy-editing.fr (16/11) : également inaccessible, accès réseau refusé ; attendre des captures.
 
 ### Reste à faire
-- Infos de Neelsen : URL Instagram, adresse mail pro, nom de domaine, accord des clients + vidéos, contenu des niveaux YouTube, validation de la phrase de remboursement.
+- Infos de Neelsen : adresse mail pro, nom de domaine, accord des clients + vidéos, contenu des niveaux YouTube, validation de la phrase de remboursement.
 - Remplacer les `TODO` (`grep -rn TODO public/`).
 - Mise en ligne (après accord) : Cloudflare Pages, domaine, Brevo (domaine authentifié, expéditeur, clé, listes), Plausible.
 - Après immatriculation de la SAS (janvier 2027) : compléter les pages légales.
