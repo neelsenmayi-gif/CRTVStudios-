@@ -306,6 +306,24 @@ html:not(.js) .manifest em { font-style: normal; }
 .band p { margin-top: 18px; max-width: 34em; font-size: 1.1rem; color: rgba(255,255,255,.86); }
 .band .btn { margin-top: 28px; }
 .band :focus-visible { outline-color: #fff; }
+.band-grid { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 960px) { .band-grid:has(.stickers) { grid-template-columns: 1.1fr .9fr; } }
+/* Stickers : détourés, contour blanc épais, légère inclinaison, flottement doux */
+.stickers { position: relative; height: clamp(300px, 80vw, 520px); }
+.sticker {
+  position: absolute; bottom: 0; width: auto; height: 92%; max-width: 62%; object-fit: contain;
+  filter:
+    drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
+    drop-shadow(0 18px 28px rgba(10, 6, 60, .55));
+}
+.sticker.s1 { left: 0; transform: rotate(-6deg); }
+.sticker.s2 { right: 0; height: 100%; transform: rotate(5deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .sticker.s1 { animation: sticker1 6s ease-in-out infinite; }
+  .sticker.s2 { animation: sticker2 7s ease-in-out infinite; }
+}
+@keyframes sticker1 { 0%, 100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(-3deg) translateY(-10px); } }
+@keyframes sticker2 { 0%, 100% { transform: rotate(5deg) translateY(0); } 50% { transform: rotate(8deg) translateY(-12px); } }
 
 /* ---------- Réalisations ---------- */
 .reels {
