@@ -33,7 +33,8 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Mouvement : le logo se range dans l'en-tête au défilement (avec reflet au sol), reflet lumineux qui balaie le logo, lumières lentes dans le hero, bandeau défilant des formats, mots du manifeste qui s'allument au scroll, révélations, reflet qui suit le pointeur sur les cartes, ligne de progression de la méthode.
 - Offres séparées en 3 volets, comme le business plan (section 6.1) : Offre 1 Jeunes créateurs (Short Solo, Pack Boost, Pack Pro) ; Offre 2 Packs de clipping (15, 30) ; Offre 3 Projets sur mesure (Vidéo YouTube « dès 240 € », collaboration publicitaire et contenus d'envergure sur devis, plus une ligne « photo, graphisme et logo sur devis »). Choix validés par Neelsen le 16/11.
 - Logo : lettres « liquides » en forme de cercle. Original blanc sur noir dans `sources/`. Sur le site : SVG vectorisé (`public/assets/logo.svg` noir, `logo-blanc.svg` blanc), fond transparent, plus besoin de `mix-blend-mode`.
-- Ton : direct, jeune, fiable ; phrases courtes ; vouvoiement (tranché par Neelsen).
+- Ton du site : direct, jeune, fiable ; phrases courtes ; vouvoiement des visiteurs (tranché par Neelsen).
+- Échanges avec Neelsen : tutoiement (demandé par Neelsen le 17/11).
 - Éviter les promesses non confirmées et les chiffres inventés.
 
 ## À confirmer / à brancher
