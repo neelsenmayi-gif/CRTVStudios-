@@ -12,7 +12,7 @@
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduce) root.classList.add("motion");
 
-  var MAIL = "contact@crtvstudios.fr"; // TODO mail pro : garder en phase avec index.html
+  var MAIL = "contact@crtvstudios.fr"; // adresse pro (confirmée le 17/11)
 
   function track(name, props) {
     try { if (typeof window.plausible === "function") window.plausible(name, props ? { props: props } : undefined); } catch (e) { /* stats facultatives */ }

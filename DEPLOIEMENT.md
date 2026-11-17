@@ -29,7 +29,7 @@ Rien n'est publié ni acheté tant que Neelsen n'a pas donné son accord. Ce gui
 
 Proposition : **crtvstudios.fr** (public français, suisse et belge ; le `.fr` inspire confiance en France). Réserver aussi **crtvstudios.com** si disponible, pour éviter qu'un tiers le prenne, avec une redirection vers le `.fr`.
 
-- `.fr` : à acheter chez un registraire français (OVHcloud, Gandi…), environ 7 à 15 € par an. Cloudflare ne vend pas les `.fr`.
+- Domaine acheté par Neelsen le 17/11 : **crtvstudios.fr**, chez IONOS (boîte mail contact@crtvstudios.fr créée chez IONOS).
 - `.com` : possible directement chez Cloudflare Registrar (prix coûtant, environ 10 € par an).
 
 Vérifier la disponibilité au moment de l'achat : elle n'a pas été contrôlée ici.
