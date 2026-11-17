@@ -429,11 +429,12 @@ html:not(.js) .manifest em { font-style: normal; }
 
 /* ---------- Pied de page ---------- */
 footer { position: relative; overflow: hidden; padding: 64px 0 calc(40px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); color: var(--mist); font-size: .95rem; }
-footer .wrap { display: grid; gap: 28px; }
-footer .giant { width: min(70vw, 340px); }
+footer .wrap { display: grid; gap: 24px; justify-items: center; text-align: center; }
+footer .giant { width: min(62vw, 300px); }
+footer p { max-width: 34em; }
 footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 24px; }
 footer a { color: var(--white); }
-@media (min-width: 960px) { footer .wrap { grid-template-columns: auto 1fr auto; align-items: end; gap: 48px; } }
+footer ul { justify-content: center; }
 
 /* ---------- Barre d'action mobile ---------- */
 .sticky-cta {
