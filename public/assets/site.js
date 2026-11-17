@@ -31,8 +31,57 @@
   var brand = document.querySelector(".brand");
   var geo = null;
 
-  function measure() {
+  /* Logo volant.
+     1) Navigateurs récents (iOS 26, Chrome, Edge) : l'animation est confiée au navigateur via
+        ScrollTimeline. Elle suit le défilement sur la carte graphique, sans JavaScript à chaque
+        image : aucun retard ni saccade, même pendant l'inertie du défilement au doigt.
+     2) Autres navigateurs : repli en JavaScript, calé sur le défilement. */
+  var hasTimeline = typeof window.ScrollTimeline === "function" && fly && typeof fly.animate === "function";
+  var flyAnims = [];
+  var lastW = 0, lastH = 0, lastDoc = 0;
+
+  function flyState(y) {
+    var dist = Math.max(1, geo.top0 + geo.h0 * 0.55 - geo.top1);
+    var p = clamp(y / dist), e = ease(p);
+    return {
+      x: lerp(geo.left0, geo.left1, e),
+      t: lerp(geo.top0 - y, geo.top1, e),
+      k: lerp(geo.w0, geo.w1, e) / geo.w0,
+      o: Math.max(0, .32 * (1 - p * 2.5)),
+      dist: dist
+    };
+  }
+  function tf(st) { return "translate3d(" + st.x.toFixed(2) + "px," + st.t.toFixed(2) + "px,0) scale(" + st.k.toFixed(4) + ")"; }
+
+  function buildTimeline() {
+    flyAnims.forEach(function (an) { an.cancel(); });
+    flyAnims = [];
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var dist = flyState(0).dist;
+    if (maxScroll <= dist + 1) return false;
+    var frames = [], fades = [], N = 32;
+    for (var i = 0; i <= N; i++) {
+      var y = dist * i / N, st = flyState(y), off = y / maxScroll;
+      frames.push({ offset: off, transform: tf(st) });
+      fades.push({ offset: off, opacity: st.o });
+    }
+    var end = flyState(dist);
+    frames.push({ offset: 1, transform: tf(end) });
+    fades.push({ offset: 1, opacity: 0 });
+    var timeline = new window.ScrollTimeline({ source: document.documentElement, axis: "block" });
+    flyAnims.push(fly.animate(frames, { timeline: timeline, fill: "both", easing: "linear" }));
+    if (flyReflect) flyAnims.push(flyReflect.animate(fades, { timeline: timeline, fill: "both", easing: "linear" }));
+    fly.style.transform = "";
+    return true;
+  }
+
+  function measure(force) {
     if (!fly || !heroMark || !brand || reduce) return;
+    var w = window.innerWidth, h = window.innerHeight, doc = document.documentElement.scrollHeight;
+    // Sur iPhone, la barre d'adresse qui se replie change la hauteur pendant le défilement :
+    // on ne recalcule pas pour si peu, sinon l'animation serait reconstruite en plein geste.
+    if (!force && w === lastW && Math.abs(h - lastH) < 160 && Math.abs(doc - lastDoc) < 2) return;
+    lastW = w; lastH = h; lastDoc = doc;
     var y = window.scrollY;
     var a = heroMark.getBoundingClientRect();
     var b = brand.getBoundingClientRect();
@@ -41,6 +90,16 @@
       left1: b.left, top1: b.top, w1: b.width
     };
     fly.style.width = geo.w0 + "px";
+    if (!(hasTimeline && buildTimeline())) {
+      hasTimeline = false;
+      drawFly();
+    }
+  }
+  function drawFly() {
+    if (!geo || hasTimeline) return;
+    var st = flyState(window.scrollY);
+    fly.style.transform = tf(st);
+    if (flyReflect) flyReflect.style.opacity = st.o.toFixed(3);
   }
 
   // Manifeste : découpe en mots
@@ -78,56 +137,51 @@
 
     if (header) header.classList.toggle("is-solid", y > vh * 0.55);
 
-    if (geo && !reduce) startFly();
+    drawFly();
 
     if (words.length && !reduce) {
       var r = manifest.getBoundingClientRect();
+      if (r.bottom > -vh && r.top < vh * 2) {
       var prog = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35));
       var lit = Math.round(prog * words.length);
-      for (var i = 0; i < words.length; i++) words[i].classList.toggle("on", i < lit);
+      for (var i = 0; i < words.length; i++) {
+        var on = i < lit;
+        if (words[i]._on !== on) { words[i]._on = on; words[i].classList.toggle("on", on); }
+      }
+      }
     }
 
     if (!reduce) {
       scrollers.forEach(function (el) {
         var rr = el.getBoundingClientRect();
+        if (rr.bottom < -50 || rr.top > vh + 50) return; // hors écran : rien à recalculer
         var v = el.classList.contains("steps")
           ? clamp((vh * 0.8 - rr.top) / (rr.height + vh * 0.2))
           : clamp((vh - rr.top) / (vh + rr.height));
-        el.style.setProperty("--p", v.toFixed(4));
+        var val = v.toFixed(3);
+        if (el._p !== val) { el._p = val; el.style.setProperty("--p", val); }
       });
     }
   }
-  /* Logo volant : il suit le défilement avec un léger amorti (interpolation à chaque image),
-     ce qui lisse les à-coups du défilement au doigt. */
-  var flyY = window.scrollY, flyRunning = false;
-  function drawFly(y) {
-    var dist = Math.max(1, geo.top0 + geo.h0 * 0.55 - geo.top1);
-    var p = clamp(y / dist), e = ease(p);
-    var x = lerp(geo.left0, geo.left1, e);
-    var t = lerp(geo.top0 - y, geo.top1, e);
-    var k = lerp(geo.w0, geo.w1, e) / geo.w0;
-    fly.style.transform = "translate3d(" + x.toFixed(2) + "px," + t.toFixed(2) + "px,0) scale(" + k.toFixed(4) + ")";
-    if (flyReflect) flyReflect.style.opacity = String(Math.max(0, .32 * (1 - p * 2.5)).toFixed(3));
-  }
-  function flyStep() {
-    var target = window.scrollY;
-    flyY += (target - flyY) * 0.2;
-    if (Math.abs(target - flyY) < 0.25) flyY = target;
-    drawFly(flyY);
-    if (flyY !== target) requestAnimationFrame(flyStep); else flyRunning = false;
-  }
-  function startFly() { if (!flyRunning) { flyRunning = true; requestAnimationFrame(flyStep); } }
-
   var ticking = false;
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
 
-  measure();
-  if (geo) { flyY = window.scrollY; drawFly(flyY); }
+  // Le reflet du logo se met en pause pendant le défilement (moins de travail graphique).
+  var scrollIdle = null;
+  function onScrollState() {
+    if (!root.classList.contains("is-scrolling")) root.classList.add("is-scrolling");
+    clearTimeout(scrollIdle);
+    scrollIdle = setTimeout(function () { root.classList.remove("is-scrolling"); }, 180);
+  }
+
+  measure(true);
   frame();
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", function () { measure(); onScroll(); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { measure(); onScroll(); });
-  window.addEventListener("load", function () { measure(); onScroll(); });
+  window.addEventListener("scroll", function () { onScroll(); if (!reduce) onScrollState(); }, { passive: true });
+  window.addEventListener("resize", function () { measure(false); onScroll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { measure(true); onScroll(); });
+  window.addEventListener("load", function () { measure(true); onScroll(); });
+  // La hauteur de la page change quand les images différées arrivent : on recale l'animation.
+  if ("ResizeObserver" in window) new ResizeObserver(function () { measure(false); }).observe(document.body);
 
   // Révélations à l'entrée dans l'écran
   var reveals = document.querySelectorAll(".reveal");

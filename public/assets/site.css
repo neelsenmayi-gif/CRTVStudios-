@@ -525,3 +525,5 @@ html.motion .reveal.is-in { opacity: 1; transform: none; }
 .eyebrow.on-blue { color: rgba(255, 255, 255, .85); }
 .eyebrow.on-blue::before { background: #fff; }
 @media (max-width: 959px) { body.has-sticky { padding-bottom: 76px; } }
+/* Pendant le défilement, le reflet du logo se met en pause (moins de travail graphique) */
+html.is-scrolling .mark.shine::after { animation-play-state: paused; }
