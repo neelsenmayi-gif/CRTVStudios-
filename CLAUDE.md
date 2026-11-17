@@ -63,6 +63,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Pages légales provisoires (`mentions-legales.html`, `confidentialite.html`) avec champs `[À COMPLÉTER]`.
 - Statistiques : emplacement Plausible prêt (commenté), événements personnalisés déjà émis. Lien bio avec UTM dans `DEPLOIEMENT.md`.
 - Contrôles v3 du 16/11 : Lighthouse accueil mobile 95/100/100/100, bureau 100/100/100/100 ; axe 0 violation (animations actives ou réduites) ; aucun débordement de 320 à 1440 px ; parcours formulaire testé.
+- 17/11 : accès GitHub réparé par Neelsen ; tout l'historique est poussé sur `neelsenmayi-gif/CRTVStudios-`, branche `claude/crtv-studios-site-4cbeiy` (dépôt vide auparavant, cette branche est donc la branche par défaut). Proposition : créer `main` comme branche de production pour Cloudflare Pages (en attente de l'accord de Neelsen).
 - Aperçu privé consultable : https://claude.ai/artifact/9rU9tzDokt694c9zUUSQW4 (le formulaire n'y envoie rien).
 
 ### Décisions
