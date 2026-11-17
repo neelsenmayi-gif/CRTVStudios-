@@ -286,7 +286,7 @@
     h.textContent = "Demande reçue.";
     h.tabIndex = -1;
     var p = document.createElement("p");
-    p.textContent = "Merci " + (data.nom || "") + ". Nous vous répondons sous 24 h à l'adresse " + (data.email || "indiquée") + ". Pensez à vérifier vos courriers indésirables.";
+    p.textContent = "Merci " + (data.nom || "") + ". Nous vous répondons sous 24 à 48 h à l'adresse " + (data.email || "indiquée") + ". Pensez à vérifier vos courriers indésirables.";
     var a = document.createElement("a");
     a.className = "btn ghost"; a.href = "#offres"; a.textContent = "Revoir les offres";
     box.appendChild(h); box.appendChild(p); box.appendChild(a);

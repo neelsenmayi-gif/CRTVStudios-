@@ -17,7 +17,8 @@ export const OFFRES = {
   "clipping-15": "Clipping 15 (350 € HT)",
   "clipping-30": "Clipping 30 (520 € HT)",
   "youtube": "Vidéo YouTube (dès 240 € HT)",
-  "sur-mesure": "Projet sur mesure (sur devis)",
+  "graphisme": "Graphisme : logo, miniatures, photo, affiches (sur devis)",
+  "sur-mesure": "Formats longs, tournages, contenus d'envergure (sur devis)",
   "conseil": "Ne sait pas encore, souhaite un conseil",
 };
 
