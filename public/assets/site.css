@@ -306,16 +306,24 @@ html:not(.js) .manifest em { font-style: normal; }
 .band p { margin-top: 18px; max-width: 34em; font-size: 1.1rem; color: rgba(255,255,255,.86); }
 .band .btn { margin-top: 28px; }
 .band :focus-visible { outline-color: #fff; }
-.band-grid { display: grid; gap: 40px; align-items: center; }
-@media (min-width: 960px) { .band-grid:has(.stickers) { grid-template-columns: .9fr 1.1fr; gap: 56px; } }
-/* Sticker : contour blanc intégré à l'image, inclinaison et flottement doux */
-.stickers { position: relative; margin-inline: -4px; }
-.sticker { width: 100%; height: auto; transform: rotate(-4deg); filter: drop-shadow(0 22px 30px rgba(10, 6, 60, .5)); }
-@media (prefers-reduced-motion: no-preference) {
-  .sticker { animation: sticker 6.5s ease-in-out infinite; }
-  .stickers:hover .sticker { animation-duration: 2.5s; }
+.band-grid { position: relative; z-index: 1; display: grid; gap: 0; }
+/* Lucia et Jason : posés sur le bas de la section, à droite, sans recouvrir le texte.
+   Ils montent légèrement en place au défilement (--p fourni par le script). */
+.band:has(.stickers) { padding-bottom: 0; }
+.band-copy { padding-bottom: 28px; }
+.stickers { position: relative; height: min(108vw, 560px); margin-inline: calc(var(--gutter) * -1); }
+.sticker {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; max-width: none;
+  object-fit: contain; object-position: center bottom;
+  translate: 0 max(0px, calc((.55 - var(--p, .55)) * 180px));
+  filter: drop-shadow(0 0 40px rgba(10, 6, 60, .45));
 }
-@keyframes sticker { 0%, 100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-1.5deg) translateY(-10px); } }
+@media (min-width: 960px) {
+  .band-grid:has(.stickers) { grid-template-columns: .9fr 1.1fr; gap: 48px; }
+  .band-copy { align-self: center; padding-block: 24px clamp(96px, 10vw, 140px); }
+  .stickers { height: auto; margin-inline: 0; align-self: stretch; }
+  .sticker { height: calc(100% + 56px); object-position: right bottom; }
+}
 footer .tm { font-size: .8rem; color: #7c84ad; }
 
 /* ---------- Réalisations ---------- */
