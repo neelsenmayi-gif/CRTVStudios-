@@ -124,6 +124,7 @@ async function sendNotification(env, d) {
     body: JSON.stringify({
       sender: { email: env.SENDER_EMAIL, name: env.SENDER_NAME || "Site CRTV Studios" },
       to: [{ email: env.CONTACT_TO_EMAIL }],
+      ...copies(env),
       replyTo: { email: d.email, name: d.nom },
       subject: `Devis — ${d.offre} — ${d.nom}`,
       textContent: text,
@@ -178,6 +179,16 @@ function reply(wantsJson, status, body) {
   // Formulaire envoyé sans JavaScript : redirection vers une page lisible
   const location = status === 200 ? "/merci.html" : "/erreur.html";
   return new Response(null, { status: 303, headers: { Location: location, "Cache-Control": "no-store" } });
+}
+
+// Copies facultatives de la notification (ex. une boîte qui notifie bien sur téléphone).
+// NOTIFY_CC = adresses séparées par des virgules ; jamais renvoyé au client.
+function copies(env) {
+  const list = String(env.NOTIFY_CC || "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter((e) => EMAIL_RE.test(e) && e !== String(env.CONTACT_TO_EMAIL || "").toLowerCase());
+  return list.length ? { cc: [...new Set(list)].map((email) => ({ email })) } : {};
 }
 
 function str(v) {

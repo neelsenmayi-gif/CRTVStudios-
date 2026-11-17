@@ -93,6 +93,16 @@ test("envoi sans JavaScript : redirection vers merci.html", async () => {
   assert.equal(res.headers.get("Location"), "/merci.html");
 });
 
+test("copie de la notification si NOTIFY_CC est rempli", async () => {
+  await run(GOOD, { ...ENV, NOTIFY_CC: "copie@example.com, pas-un-mail, PRO@example.com" });
+  assert.deepEqual(calls[0].body.cc, [{ email: "copie@example.com" }]);
+});
+
+test("pas de copie par défaut", async () => {
+  await run(GOOD);
+  assert.equal(calls[0].body.cc, undefined);
+});
+
 test("validate : nom vide refusé", () => {
   assert.deepEqual(validate({ ...GOOD, nom: "  " }).errors, ["nom"]);
 });
