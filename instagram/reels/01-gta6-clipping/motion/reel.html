@@ -40,7 +40,7 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
 /* Scène A */
 #a-gta { top: 290px; font-size: 300px; font-stretch: 85%; }
 #a-deb { top: 600px; font-size: 130px; font-stretch: 90%; }
-#sticker { position: absolute; left: 50%; top: 770px; width: 700px; height: 718px; margin-left: -350px; opacity: 0; transform-origin: 50% 100%; will-change: transform;
+#sticker { position: absolute; left: 50%; top: 991px; width: 1100px; height: 1129px; margin-left: -550px; opacity: 0; transform-origin: 50% 100%; will-change: transform;
   filter: drop-shadow(0 18px 40px rgba(0,0,0,.6)) drop-shadow(0 0 50px rgba(47,43,255,.55)); }
 #sticker img { width: 100%; height: 100%; display: block; }
 #a-gta .w { text-shadow: var(--rgb, none); }
@@ -102,7 +102,6 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
 /* Scène F : opportunité + CTA */
 #f-l1 { top: 520px; font-size: 148px; font-stretch: 88%; }
 #f-l2 { top: 680px; font-size: 118px; }
-#f-gta { top: 410px; font-size: 44px; }
 #comment { position: absolute; left: 110px; right: 110px; top: 1000px; height: 300px; opacity: 0; }
 #comment .q { font: 800 64px/1.1 "Bricolage"; text-align: center; }
 #comment .box { position: absolute; left: 0; right: 0; top: 130px; height: 132px; border-radius: 66px; background: rgba(255,255,255,.08); border: 3px solid rgba(255,255,255,.35); display: flex; align-items: center; padding: 0 30px; gap: 24px; }
@@ -180,7 +179,6 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
 
   <!-- F : opportunité + CTA -->
   <div class="scene" id="sF">
-    <div class="line tag" id="f-gta"><span class="w" data-s="19.31">Sortie de GTA 6</span></div>
     <div class="line" id="f-l1"><span class="w g" data-s="19.31">L'opportunité,</span></div>
     <div class="line" id="f-l2"><span class="w" data-s="20.20">c'est </span><span class="w" data-s="20.48">maintenant.</span></div>
     <div id="comment">
@@ -281,8 +279,8 @@ function render(t) {
   /* A bis : sticker GTA 6, pop puis balancier amorti comme un culbuto */
   const st0 = 0.5, tau = Math.max(0, t - st0);
   const pop = p(t, st0, st0 + 0.28);
-  const ang = t < st0 ? -16 : -16 * Math.exp(-2.4 * tau) * Math.cos(8.5 * tau);
-  const bounce = t < st0 ? 0 : -Math.abs(Math.sin(9 * tau)) * 38 * Math.exp(-3.2 * tau);
+  const ang = t < st0 ? -13 : -13 * Math.exp(-2.4 * tau) * Math.cos(8.5 * tau);
+  const bounce = t < st0 ? 0 : -Math.abs(Math.sin(9 * tau)) * 24 * Math.exp(-3.2 * tau);
   $("#sticker").style.opacity = eOut(p(t, st0, st0 + 0.12)).toFixed(3);
   $("#sticker").style.transform = `translateY(${(bounce + (1 - eOut(pop)) * 160).toFixed(1)}px) rotate(${ang.toFixed(2)}deg) scale(${lerp(0.35, 1, eBack(pop)).toFixed(3)})`;
 
