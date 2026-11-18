@@ -69,8 +69,8 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - **Point d'arrêt 18/11 ~01 h 20 — à reprendre en priorité :**
   1. Le formulaire marchait à 00 h 17 (mails reçus sur contact@ et copie Gmail, copie cachée publiée). Après ajout de BREVO_LIST_ID=2, BREVO_NEWSLETTER_LIST_ID=3, BREVO_NAME_ATTRIBUTE=NOM et « Retry deployment », le formulaire affiche « L'envoi n'a pas abouti » ; Brevo n'enregistre aucune tentative d'envoi (blocage avant ou au niveau de l'appel). Les 8 noms de variables sont corrects (capture vérifiée) ; pas d'alerte IP Brevo.
   2. Code de diagnostic publié sur main (200742d) : le message d'erreur se termine par « (code : …) ». Il ne s'affiche pas encore car l'ancien site.js est en cache (navigateur + Cloudflare, Cache-Control 7 jours sur /assets/*).
-  3. Correctif cache prêt sur la branche Claude (dabe112, CSS/JS versionnés ?v= et no-cache) : **en attente du « oui » de Neelsen pour passer sur main.**
-  4. Ensuite : tester sur https://crtv-studios.pages.dev (navigation privée), lire le code, corriger. Pistes : valeur d'une variable mal saisie (ex. clé), ou effet des nouvelles variables.
+  3. Code obtenu sur crtv-studios.pages.dev : `send_failed 400` (Brevo refuse). Même envoi reproduit par Claude avec sa clé et les valeurs prévues : accepté → cause probable : valeur de variable Cloudflare mal saisie (espace/retour à la ligne). Publié sur main le 18/11 avec accord : nettoyage des variables, nouvel essai minimal (sans replyTo ni copie) si Brevo renvoie 400, code Brevo dans le diagnostic, et correctif cache (CSS/JS versionnés ?v=, no-cache).
+  4. À faire : test du formulaire sur crtvstudios.fr ; si le mail arrive sans « répondre-à » ou sans copie Gmail, faire ressaisir les variables SENDER_EMAIL / CONTACT_TO_EMAIL / NOTIFY_CC dans Cloudflare.
   5. Puis : mail de confirmation automatique au client, vidéos, problème de notifications iPad.
 - Aperçu privé consultable : https://claude.ai/artifact/9rU9tzDokt694c9zUUSQW4 (le formulaire n'y envoie rien).
 
