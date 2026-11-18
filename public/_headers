@@ -10,5 +10,11 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
+# CSS et JS : toujours revérifiés, pour que chaque mise à jour soit visible tout de suite
+/assets/site.css
+  Cache-Control: no-cache
+/assets/site.js
+  Cache-Control: no-cache
+
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
