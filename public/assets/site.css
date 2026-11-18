@@ -345,6 +345,18 @@ footer .tm { font-size: .8rem; color: #7c84ad; }
   background: linear-gradient(115deg, rgba(255,255,255,.14) 0%, transparent 28%, transparent 70%, rgba(255,255,255,.05) 100%);
 }
 .frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Habillage CRTV sur les vidéos : vignettage bleuté en haut + logo avec halo */
+.frame:has(video)::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 34%; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 6, 30, .92) 0%, rgba(16, 32, 138, .55) 38%, rgba(47, 43, 255, .12) 72%, transparent 100%);
+  transition: opacity .4s var(--ease);
+}
+.frame-badge {
+  position: absolute; top: 16px; left: 16px; z-index: 2; width: 54px; pointer-events: none;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .55)) drop-shadow(0 0 22px rgba(47, 43, 255, .55)) drop-shadow(0 0 10px rgba(255, 47, 142, .3));
+}
+.frame-badge .mark { width: 54px; }
+.reel.is-playing .frame::before { opacity: .55; }
 .play { position: absolute; inset: 0; z-index: 3; width: 100%; border: 0; background: transparent; color: #fff; display: grid; place-items: center; cursor: pointer; padding: 0; border-radius: var(--radius); }
 .play span { width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; background: rgba(5,6,13,.55); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.8); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: background .3s; }
 .play:hover span { background: var(--fuchsia); }
