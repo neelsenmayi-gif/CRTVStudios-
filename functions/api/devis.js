@@ -71,13 +71,14 @@ export async function onRequestPost(context) {
   const d = v.value;
 
   // --- Configuration
-  if (!env.BREVO_API_KEY || !env.CONTACT_TO_EMAIL || !env.SENDER_EMAIL) {
-    return reply(wantsJson, 503, { error: "not_configured" });
+  const missing = ["BREVO_API_KEY", "CONTACT_TO_EMAIL", "SENDER_EMAIL"].filter((k) => !env[k]);
+  if (missing.length) {
+    return reply(wantsJson, 503, { error: "not_configured", status: missing.join(",") });
   }
 
   // --- 1) E-mail à l'adresse pro (bloquant)
   const sent = await sendNotification(env, d);
-  if (!sent) return reply(wantsJson, 502, { error: "send_failed" });
+  if (!sent.ok) return reply(wantsJson, 502, { error: "send_failed", status: sent.status });
 
   // --- 2) Contact Brevo (non bloquant)
   const sync = syncContact(env, d).catch((e) => console.error("Brevo contact:", e && e.message));
@@ -133,7 +134,7 @@ async function sendNotification(env, d) {
     }),
   });
   if (!res.ok) console.error("Brevo e-mail:", res.status, await safeText(res));
-  return res.ok;
+  return { ok: res.ok, status: res.status };
 }
 
 async function syncContact(env, d) {

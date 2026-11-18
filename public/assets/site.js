@@ -306,7 +306,11 @@
       }).then(function (res) {
         return res.json().catch(function () { return {}; }).then(function (body) { return { ok: res.ok, body: body }; });
       }).then(function (r) {
-        if (!r.ok) throw new Error((r.body && r.body.error) || "envoi");
+        if (!r.ok) {
+          var e = new Error((r.body && r.body.error) || "envoi");
+          e.code = [r.body && r.body.error, r.body && r.body.status].filter(Boolean).join(" ") || "http";
+          throw e;
+        }
         track("Devis envoyé", { offre: data.besoin || "inconnue" });
         showSuccess(data);
       }).catch(function (err) {
@@ -324,6 +328,11 @@
           a.textContent = MAIL;
           status.appendChild(a);
           status.appendChild(document.createTextNode("."));
+          // Petit code technique pour le diagnostic (ex. « send_failed 401 »), discret pour le visiteur
+          var small = document.createElement("small");
+          small.className = "error-code";
+          small.textContent = " (code : " + ((err && err.code) || "réseau") + ")";
+          status.appendChild(small);
         }
         if (window.turnstile && typeof window.turnstile.reset === "function") window.turnstile.reset();
       });

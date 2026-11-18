@@ -69,13 +69,16 @@ test("champs invalides : 400 avec la liste", async () => {
 test("sans clé Brevo : 503 not_configured", async () => {
   const res = await run(GOOD, {});
   assert.equal(res.status, 503);
-  assert.equal((await res.json()).error, "not_configured");
+  const body = await res.json();
+  assert.equal(body.error, "not_configured");
+  assert.equal(body.status, "BREVO_API_KEY,CONTACT_TO_EMAIL,SENDER_EMAIL");
 });
 
 test("échec Brevo : 502", async () => {
   globalThis.fetch = async () => new Response("err", { status: 401 });
   const res = await run(GOOD);
   assert.equal(res.status, 502);
+  assert.deepEqual(await res.json(), { error: "send_failed", status: 401 });
 });
 
 test("échec de l'ajout du contact : la demande reste acceptée", async () => {
