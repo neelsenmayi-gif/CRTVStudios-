@@ -5,14 +5,16 @@ Profil de voix lu par tous les skills `instagram-agent`. Copie active :
 nouvelle session cloud, le dossier `~/.claude` n'est pas conservé).
 
 Rédigé le 18/11/2026 à partir du brief CRTV (CLAUDE.md), des textes du site
-crtvstudios.fr et du compte Instagram lu via Windsor.ai. État du compte ce
+crtvstudios.fr et du compte Instagram lu via Windsor.ai (connecteur provisoire, gratuit ; à remplacer
+plus tard par un autre outil de liaison Instagram). État du compte ce
 jour-là : 8 abonnés, 19 abonnements, **0 publication**. Aucune légende ni
 aucun reel n'existe encore : la partie « comment je sonne » est déduite du
 site et de la bio, pas de vidéos réelles. À réécrire après les 3 premiers
 reels publiés.
 
-Les lignes marquées **[À VALIDER]** sont des propositions, pas des décisions de
-Neelsen.
+Validé par Neelsen le 18/11 : ton, interdits, preuves, mots-clés, formats
+(voix off + texte à l'écran + motion design), « AI content » et photographie.
+Les lignes encore marquées **[À VALIDER]** restent des propositions.
 
 ---
 
@@ -27,7 +29,8 @@ Neelsen.
   1. Les créateurs et streamers qui se lancent (Twitch, TikTok, YouTube), en
      particulier ceux qui démarrent avec la sortie de GTA 6 et n'ont ni le
      temps ni l'envie de monter eux-mêmes.
-  2. Les commerces et petites marques en France, Suisse et Belgique qui ont
+  2. Les commerces et petites marques de toute la zone francophone (France,
+     Belgique, Suisse, Luxembourg, Québec, Afrique francophone…) qui ont
      besoin de vidéo verticale sans équipe interne : instituts de beauté,
      fast-food, boutiques, services, trading.
 - **Ce qu'on vend (prix HT) :**
@@ -36,6 +39,8 @@ Neelsen.
   - Clipping : 15 clips 350 €, 30 clips 520 €
   - Sur mesure : vidéo YouTube dès 240 €, formats longs et tournages sur
     devis, graphisme (logo, miniatures, covers, affiches) sur devis
+  - Aussi réalisés par le réseau de freelances, sur devis : contenus créés avec
+    l'IA (AI content) et photographie.
   - Production uniquement : **pas** de gestion de campagnes publicitaires.
 
 ## Comment on sonne
@@ -48,8 +53,7 @@ Neelsen.
   - Bio actuelle : « FOR ALL CREATORS 🩵 • CLIPPING - TIKTOK, REEL, SHORTS •
     CADRAGE, MONTAGE, TOURNAGE »
 - **À l'écran on est :** direct, jeune, sûr de soi sans frimer. Rythme rapide,
-  phrases courtes, on montre le résultat avant d'expliquer. **[À VALIDER :
-  Neelsen face caméra ou pas]**
+  phrases courtes, on montre le résultat avant d'expliquer.
 - **Personne grammaticale :** « nous » pour CRTV, **vouvoiement** de
   l'audience (décision de Neelsen, comme sur le site). Exception possible en
   DM avec un streamer qui tutoie le premier.
@@ -62,11 +66,13 @@ Neelsen.
   « synergie », tout jargon d'agence marketing.
 - **Gros mots :** non.
 - **Emoji en légende :** un, rarement. Le 🩵 de la bio est notre signature.
-- **Visage à l'écran :** **[À VALIDER]** proposition : surtout faceless (le
-  montage est le produit), Neelsen face caméra pour les vidéos « coulisses »
-  et les offres.
-- **Voix off ou face caméra :** **[À VALIDER]** proposition : texte à
-  l'écran + voix off courte ; avant/après de montage sans voix.
+- **Visage à l'écran :** faceless (décision du 18/11). Le montage est le
+  produit : on montre les vidéos, pas les visages de l'équipe.
+- **Format :** voix off + texte à l'écran + effets de motion design (logo,
+  typo animée, transitions, reflets bleu nuit → bleu électrique, touche
+  fuchsia → abricot, comme le site). Montage réalisé par Claude.
+- **Texte à l'écran :** court, lisible sans le son (la majorité regarde en
+  muet), jamais plus de 6 à 8 mots par écran.
 - **Débit :** non mesuré. Défaut 170 mots/minute en attendant un essai chrono.
 - **Langue :** français. Anglais seulement pour les termes du métier
   (clipping, short, reel) et la signature « FOR ALL CREATORS ».
@@ -74,7 +80,7 @@ Neelsen.
 ## Nos positions
 
 Ce qu'on pense et qu'une partie de notre public ne pense pas encore.
-**[À VALIDER : toutes]**
+**[À VALIDER : toutes, détaillées à Neelsen le 18/11]**
 
 1. Un stream de 4 heures qui n'est pas découpé, personne ne le verra. Le clip
    fait venir les gens sur le live, pas l'inverse.
@@ -100,8 +106,8 @@ Ce qu'on pense et qu'une partie de notre public ne pense pas encore.
   - Pas de taille d'équipe inventée : on dit « un réseau de monteurs
     qualifiés », pas « des centaines de professionnels ».
   - Pas d'expertise qu'on n'a pas : pas de gestion de pubs, pas de
-    community management. « AI content » et « photographie » figurent dans la
-    bio : **[À VALIDER]** à ne mettre en avant que si on peut le livrer.
+    community management. « AI content » et « photographie » sont confirmés
+    par Neelsen (freelances du réseau capables de les produire).
   - La promesse de remboursement n'est pas publiable tant que Lucas et le
     comptable ne l'ont pas validée.
   - GTA 6 : on parle du jeu, on n'utilise ni logo ni visuel officiel dans les
@@ -118,12 +124,14 @@ résultat client reste `{{chiffre}}` tant qu'il n'est pas fourni.
 - Délais affichés et tenus : Short Solo en 48 h, réponse aux demandes sous
   24 à 48 h.
 - Chaque vidéo est relue par CRTV avant d'être envoyée au client.
-- Clients en France, Suisse et Belgique, travail 100 % à distance.
+- Clients en France, Suisse et Belgique ; travail 100 % à distance pour toute
+  la zone francophone (ne pas dire qu'on a des clients au Québec ou en Afrique
+  tant que ce n'est pas vrai).
 
 ## L'appel à l'action
 
-- **Mot-clé en commentaire/DM :** **[À VALIDER]** proposition : `CLIP`
-  (créateurs, streamers) ; alternative pour les commerces : `DEVIS`.
+- **Mot-clé en commentaire/DM (validé le 18/11) :** `CLIP` pour les créateurs
+  et streamers, `DEVIS` pour les commerces et marques.
 - **Ce que le mot-clé envoie :** la grille de prix + le lien du formulaire
   de devis, et une question pour cerner le besoin (« Vous streamez sur quelle
   plateforme ? »).
