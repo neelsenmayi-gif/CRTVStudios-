@@ -101,6 +101,10 @@ vague de nouveaux streamers), jamais une promesse de vues.
 ## Rythme et formats
 
 - **4 à 5 reels par semaine** (Neelsen veut communiquer en masse).
+- **Aucun prix annoncé dans les vidéos** (décision du 18/11). Les prix restent
+  sur le site et en DM.
+- **Nom prononcé à l'oral : « Creative Studios »** (pas « CRTV Studios »).
+  À l'écran, on affiche le logo CRTV.
 - Voix off de synthèse ElevenLabs, jeune, décontractée et accrocheuse.
   Voix testée en premier : « Hugo – Punchy French Creator »
   (voice_id 3Tp5mYhT9wrfnry9pzvV), modèle eleven_v4. **[À VALIDER à l'écoute]**
