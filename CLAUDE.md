@@ -15,7 +15,8 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - Équipe : Neelsen (fondateur, président, direction, prospection, relation client), Lucas Magré (associé, comptabilité et trésorerie). SAS prévue, immatriculation début janvier 2027 (75 % / 25 %).
 - Valeurs : créativité, réactivité, tendance, professionnalisme, fiabilité.
 - Ligne rouge : ne jamais prétendre à une expertise qu'ils n'ont pas ; aucun contenu discriminatoire, haineux, trompeur ou illégal ; toutes les collaborations sont écrites et signées.
-- Clients actuels : Luna Esthétique (institut de beauté, Suisse, reel Instagram), Bella Consulting (agence qui accompagne des créatrices beauté), Andri Sogood (influenceur, clipping de ses streams Twitch).
+- Clients actuels (orthographe confirmée par Neelsen le 18/11) : **Luna Aesthetic** (institut de beauté, Suisse, reel Instagram), Bella Consulting (agence qui accompagne des créatrices beauté), **AndrySoGood** (créateur TikTok et Instagram, clipping de ses streams Twitch), et un média basketball (« Le 144 », orthographe à confirmer).
+- Réalisations prévues (18/11) : carte 1 « Le 144 » — Média basketball ; carte 2 « AndrySoGood » — Créateur TikTok et Instagram ; carte 3 « Luna Aesthetic » — sous-titre à définir (proposé : Institut de beauté, Suisse). Phrase « Les extraits sont publiés avec l'accord de nos clients » conservée. Vidéos à recevoir en pièce jointe sur contact.crtvstudios@gmail.com (objet « CRTV vidéos site »), fichiers d'origine des monteurs.
 
 ## Offres et prix (HT)
 - Short Solo : 65 € (1 short, livraison 48 h)
