@@ -101,6 +101,8 @@ vague de nouveaux streamers), jamais une promesse de vues.
 ## Rythme et formats
 
 - **4 à 5 reels par semaine** (Neelsen veut communiquer en masse).
+- **Pas de rappel du compte (@crtvstudios_) ni du nom sous le logo** dans les
+  vidéos : le spectateur est déjà sur le compte, le logo suffit.
 - **Aucun prix annoncé dans les vidéos** (décision du 18/11). Les prix restent
   sur le site et en DM.
 - **Nom prononcé à l'oral : « Creative Studios »** (pas « CRTV Studios »).
@@ -135,8 +137,12 @@ vague de nouveaux streamers), jamais une promesse de vues.
     par Neelsen (freelances du réseau capables de les produire).
   - La promesse de remboursement n'est pas publiable tant que Lucas et le
     comptable ne l'ont pas validée.
-  - GTA 6 : on parle du jeu, on n'utilise ni logo ni visuel officiel dans les
-    posts, on ne laisse pas penser qu'on est partenaire de Rockstar Games.
+  - GTA 6 : on ne laisse jamais penser qu'on est partenaire de Rockstar Games.
+    Exception décidée par Neelsen le 18/11 : le sticker Lucia et Jason du site
+    (`public/assets/stickers/lucia-jason.webp`) peut apparaître dans les reels
+    GTA 6, en connaissance du risque (droits Rockstar / Take-Two, retrait
+    possible par Instagram). Pas de logo officiel GTA. À retirer à la moindre
+    réclamation.
 
 ## Preuves qu'on peut utiliser
 

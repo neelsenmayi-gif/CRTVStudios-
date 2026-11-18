@@ -25,7 +25,7 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
   background-size: 90px 90px;
   -webkit-mask: radial-gradient(ellipse 45% 40% at 50% 55%, #000 0%, transparent 100%); mask: radial-gradient(ellipse 45% 40% at 50% 55%, #000 0%, transparent 100%); }
 #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, transparent 45%, rgba(2,3,8,.85) 100%); }
-#grain { position: absolute; inset: 0; opacity: .07; mix-blend-mode: screen; }
+#grain { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: .07; mix-blend-mode: screen; }
 #flash { position: absolute; inset: 0; background: radial-gradient(circle at 50% 42%, rgba(160,170,255,.9), rgba(47,43,255,.25) 40%, transparent 70%); opacity: 0; }
 #sweep { position: absolute; top: -400px; left: -600px; width: 260px; height: 2800px; transform: rotate(18deg);
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent); opacity: 0; }
@@ -38,8 +38,11 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
 .tag { font-family: "Nunito", sans-serif; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 
 /* Scène A */
-#a-gta { top: 560px; font-size: 330px; font-stretch: 85%; }
-#a-deb { top: 930px; font-size: 150px; font-stretch: 90%; }
+#a-gta { top: 290px; font-size: 300px; font-stretch: 85%; }
+#a-deb { top: 600px; font-size: 130px; font-stretch: 90%; }
+#sticker { position: absolute; left: 50%; top: 770px; width: 700px; height: 718px; margin-left: -350px; opacity: 0; transform-origin: 50% 100%; will-change: transform;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,.6)) drop-shadow(0 0 50px rgba(47,43,255,.55)); }
+#sticker img { width: 100%; height: 100%; display: block; }
 #a-gta .w { text-shadow: var(--rgb, none); }
 
 /* Scène B : mur de lives */
@@ -90,10 +93,9 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
 #logoshine { position: absolute; left: 50%; top: 50%; width: 520px; height: 535px; margin: -268px 0 0 -260px; opacity: 0; overflow: hidden;
   -webkit-mask: url("../../../../public/assets/logo-blanc.svg") center / contain no-repeat; mask: url("../../../../public/assets/logo-blanc.svg") center / contain no-repeat; }
 #logoshine i { position: absolute; top: -20%; width: 40%; height: 140%; transform: skewX(-20deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.95), transparent); }
-#e-name { top: 1250px; font-size: 56px; }
 #e-l1 { top: 600px; font-size: 104px; }
-#e-l2 { top: 720px; font-size: 104px; }
-#cut { position: absolute; left: 120px; right: 120px; top: 660px; height: 6px; background: var(--grad); box-shadow: 0 0 30px rgba(255,47,142,.9); transform-origin: left center; opacity: 0; }
+#e-l2 { top: 790px; font-size: 104px; }
+#cut { position: absolute; left: 160px; right: 160px; top: 745px; height: 6px; background: var(--grad); box-shadow: 0 0 30px rgba(255,47,142,.9); transform-origin: left center; opacity: 0; }
 #e-l3 { top: 1000px; font-size: 118px; }
 #e-l4 { top: 1130px; font-size: 118px; }
 
@@ -108,7 +110,6 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
 #comment .txt { font: 800 66px/1 "Nunito"; letter-spacing: .08em; flex: 1; }
 #comment .caret { display: inline-block; width: 5px; height: 60px; background: #fff; vertical-align: -8px; margin-left: 6px; }
 #comment .send { font: 800 40px/1 "Nunito"; color: #8f8cff; }
-#end { top: 1360px; font-size: 44px; }
 
 /* Logo rangé en haut */
 #dock { position: absolute; left: 50%; top: 250px; width: 120px; height: 124px; margin-left: -60px; opacity: 0; filter: drop-shadow(0 0 18px rgba(47,43,255,.9)); }
@@ -127,6 +128,7 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
 
   <!-- A : GTA 6 débarque -->
   <div class="scene" id="sA">
+    <div id="sticker"><img src="../../../../public/assets/stickers/lucia-jason.webp" alt=""></div>
     <div class="line" id="a-gta"><span class="w" data-s="0.00">GTA </span><span class="w g" data-s="0.56">6</span></div>
     <div class="line" id="a-deb"><span class="w" data-s="0.96">débarque.</span></div>
   </div>
@@ -168,9 +170,6 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
   <!-- E : Creative Studios -->
   <div id="logo"><img src="../../../../public/assets/logo-blanc.svg" alt=""></div>
   <div id="logoshine"><i id="shineBar"></i></div>
-  <div class="scene" id="sE">
-    <div class="line tag" id="e-name"><span class="w" data-s="14.36">Creative Studios</span></div>
-  </div>
   <div class="scene" id="sE2">
     <div class="line" id="e-l1"><span class="w" data-s="15.12">On découpe </span><span class="w g" data-s="15.96">vos streams</span></div>
     <div id="cut"></div>
@@ -188,7 +187,6 @@ body { font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing
       <div class="q">Écrivez en commentaire</div>
       <div class="box"><div class="av"></div><div class="txt"><span id="typed"></span><span class="caret" id="caret"></span></div><div class="send" id="send">Publier</div></div>
     </div>
-    <div class="line tag" id="end"><span class="w" data-s="22.75">@crtvstudios_</span></div>
   </div>
 
   <div id="dock"><img src="../../../../public/assets/logo-blanc.svg" alt=""></div>
@@ -212,7 +210,7 @@ const eBack = (x) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow
 const lerp = (a, b, x) => a + (b - a) * x;
 
 /* Fenêtres des scènes [entrée, sortie] */
-const SC = { sA: [0, 1.72], sB: [1.72, 4.84], sC: [4.84, 8.40], sD: [8.40, 14.0], sE: [14.0, 15.05], sE2: [15.05, 19.27], sF: [19.27, 99] };
+const SC = { sA: [0, 1.72], sB: [1.72, 4.84], sC: [4.84, 8.40], sD: [8.40, 14.0], sE2: [15.05, 19.27], sF: [19.27, 99] };
 
 /* Mur de lives */
 const tiles = $("#tiles");
@@ -255,7 +253,7 @@ function render(t) {
   gctx.putImageData(grainFrames[((Math.floor(t * 30) % 6) + 6) % 6], 0, 0);
 
   /* Flashs sur les temps forts */
-  const hits = [0.0, 0.56, 4.88, 10.16, 14.04, 19.31];
+  const hits = [0.0, 0.56, 4.88, 11.5, 14.04, 19.31];
   let fl = 0; for (const h of hits) fl = Math.max(fl, (t >= h ? 1 - p(t, h, h + 0.35) : 0) * (t >= h ? 1 : 0));
   $("#flash").style.opacity = (fl * 0.55).toFixed(3);
   const sw = p(t, 14.1, 15.0), sw2 = p(t, 19.35, 20.2);
@@ -279,6 +277,14 @@ function render(t) {
   $("#a-gta").style.transform = `translate(${(Math.sin(t * 90) * 10 * shake).toFixed(1)}px, ${(Math.cos(t * 77) * 6 * shake).toFixed(1)}px) scale(${lerp(1.0, 1.06, p(t, 0, 1.7)).toFixed(3)})`;
   $("#a-gta").style.setProperty("--rgb", shake > 0.02 ? `${(-14 * shake).toFixed(1)}px 0 rgba(255,47,142,.8), ${(14 * shake).toFixed(1)}px 0 rgba(47,43,255,.9)` : "none");
   $("#sA").style.transform = `scale(${lerp(1, 1.25, eInOut(p(t, 1.55, 1.75)))})`;
+
+  /* A bis : sticker GTA 6, pop puis balancier amorti comme un culbuto */
+  const st0 = 0.5, tau = Math.max(0, t - st0);
+  const pop = p(t, st0, st0 + 0.28);
+  const ang = t < st0 ? -16 : -16 * Math.exp(-2.4 * tau) * Math.cos(8.5 * tau);
+  const bounce = t < st0 ? 0 : -Math.abs(Math.sin(9 * tau)) * 38 * Math.exp(-3.2 * tau);
+  $("#sticker").style.opacity = eOut(p(t, st0, st0 + 0.12)).toFixed(3);
+  $("#sticker").style.transform = `translateY(${(bounce + (1 - eOut(pop)) * 160).toFixed(1)}px) rotate(${ang.toFixed(2)}deg) scale(${lerp(0.35, 1, eBack(pop)).toFixed(3)})`;
 
   /* B : mur de lives qui se remplit */
   const fillB = p(t, 1.9, 4.5);
@@ -310,10 +316,10 @@ function render(t) {
   $("#barEye").style.opacity = eOut(p(t, 7.0, 7.3)).toFixed(3);
   $("#eyeSlash").style.strokeDasharray = "26"; $("#eyeSlash").style.strokeDashoffset = (26 * (1 - eOut(p(t, 7.3, 7.7)))).toFixed(2);
   /* la meilleure séquence s'allume puis part vers le format vertical */
-  const hlIn = eBack(p(t, 10.1, 10.45));
-  const hlFly = eInOut(p(t, 11.2, 11.75));
+  const hlIn = eBack(p(t, 11.0, 11.22));
+  const hlFly = eInOut(p(t, 11.22, 11.62));
   const hl = $("#barHl");
-  hl.style.opacity = (t > 10.05 ? 1 : 0) * (1 - p(t, 11.6, 11.75)) + "";
+  hl.style.opacity = (t > 10.98 ? 1 : 0) * (1 - p(t, 11.55, 11.68)) + "";
   hl.style.transform = `translate(${-hlFly * 180}px, ${hlFly * 360}px) scale(${(lerp(0.3, 1, hlIn) * lerp(1, 6, hlFly)).toFixed(3)}, ${(lerp(0.3, 1, hlIn) * lerp(1, 11, hlFly)).toFixed(3)})`;
   $("#c-l1").style.opacity = (1 - p(t, 8.2, 8.4)).toFixed(3);
   $("#c-l2").style.opacity = $("#c-l3").style.opacity = (1 - p(t, 8.2, 8.4)).toFixed(3);
@@ -346,7 +352,7 @@ function render(t) {
   $("#logoshine").style.opacity = (lgA * (1 - p(t, 14.95, 15.05))).toFixed(3);
   $("#logoshine").style.transform = $("#logo").style.transform;
   $("#shineBar").style.left = `${lerp(-60, 130, eInOut(p(t, 14.2, 14.9)))}%`;
-  $("#e-name").style.opacity = (1 - p(t, 14.85, 15.0)).toFixed(3);
+  
   const dk = t >= 15.4 ? 1 : 0;
   $("#dock").style.opacity = dk; $("#dockrefl").style.opacity = dk;
   /* découpe */
