@@ -164,8 +164,9 @@ export function confirmationContent(d) {
   const html =
     `<div style="background:#f3f4f8;padding:28px 12px;font-family:Helvetica,Arial,sans-serif">` +
     `<div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden">` +
-    `<div style="background:#05060d;padding:22px 28px;color:#ffffff;font-size:20px;font-weight:800;letter-spacing:-.02em">CRTV Studios` +
-    `<div style="height:3px;width:56px;margin-top:10px;background:linear-gradient(90deg,#ff2f8e,#ff9c55);border-radius:2px"></div></div>` +
+    `<div style="background:#ffffff;padding:26px 28px 0;text-align:center">` +
+    `<img src="https://crtvstudios.fr/assets/email/logo-noir.png" width="96" height="99" alt="CRTV Studios" style="display:inline-block;width:96px;height:auto;border:0">` +
+    `<div style="height:3px;width:56px;margin:16px auto 0;background:#ff2f8e;background:linear-gradient(90deg,#ff2f8e,#ff9c55);border-radius:2px"></div></div>` +
     `<div style="padding:28px">` +
     `<p style="margin:0 0 14px;font-size:16px;color:#0d0f1a">Bonjour ${esc(prenom)},</p>` +
     `<p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:#2a2e45">Merci pour votre demande. Nous l'avons bien reçue et nous vous répondons <strong>sous 24 à 48&nbsp;h</strong>.</p>` +
