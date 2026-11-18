@@ -80,7 +80,7 @@ Les lignes encore marquées **[À VALIDER]** restent des propositions.
 ## Nos positions
 
 Ce qu'on pense et qu'une partie de notre public ne pense pas encore.
-**[À VALIDER : toutes, détaillées à Neelsen le 18/11]**
+Validées par Neelsen le 18/11.
 
 1. Un stream de 4 heures qui n'est pas découpé, personne ne le verra. Le clip
    fait venir les gens sur le live, pas l'inverse.
@@ -92,6 +92,23 @@ Ce qu'on pense et qu'une partie de notre public ne pense pas encore.
    tarif d'un short, c'est mauvais signe.
 5. GTA 6 va faire naître une vague de nouveaux streamers : ceux qui
    publient leurs clips dès le premier jour prendront l'avance.
+
+**Angle transversal (demande de Neelsen, 18/11) :** dans la plupart des reels,
+glisser un court passage « en ce moment, avec la sortie de GTA 6… » présenté
+comme une opportunité à saisir maintenant. Urgence réelle (sortie du jeu,
+vague de nouveaux streamers), jamais une promesse de vues.
+
+## Rythme et formats
+
+- **4 à 5 reels par semaine** (Neelsen veut communiquer en masse).
+- Voix off de synthèse ElevenLabs, jeune, décontractée et accrocheuse.
+  Voix testée en premier : « Hugo – Punchy French Creator »
+  (voice_id 3Tp5mYhT9wrfnry9pzvV), modèle eleven_v4. **[À VALIDER à l'écoute]**
+- Musique : son tendance ajouté dans l'app Instagram, ou musique générée par
+  ElevenLabs (instrumentale, sans voix) intégrée au montage.
+- **Extraits clients dans les reels :** uniquement AndrySoGood et Luna
+  Aesthetic. Pas Le 144. Pas d'extraits clients dans les reels GTA 6 et
+  clipping (ils ne montrent pas cette prestation).
 
 ## Interdit
 
