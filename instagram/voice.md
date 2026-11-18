@@ -93,7 +93,18 @@ Validées par Neelsen le 18/11.
 5. GTA 6 va faire naître une vague de nouveaux streamers : ceux qui
    publient leurs clips dès le premier jour prendront l'avance.
 
-**Angle transversal (demande de Neelsen, 18/11) :** dans la plupart des reels,
+**Où parler de GTA 6 (précision de Neelsen, 18/11) :** uniquement dans les
+reels sur le clipping et sur les vidéos YouTube (sans jamais dire que la vidéo
+YouTube est « sur devis »). Les autres reels visent les commerces physiques,
+les créateurs pros, les médias, les coachs et les entreprises, hors gaming.
+
+**Ne pas dire « en interne »** : CRTV travaille avec un réseau de freelances.
+Formule retenue : « on s'occupe de tout, au même endroit ».
+
+**Extrait client dans un reel :** moins d'une seconde, sans le son (ex. Luna
+Aesthetic dans le reel commerces).
+
+**Angle transversal (demande de Neelsen, 18/11, limité aux reels GTA 6) :** dans la plupart des reels,
 glisser un court passage « en ce moment, avec la sortie de GTA 6… » présenté
 comme une opportunité à saisir maintenant. Urgence réelle (sortie du jeu,
 vague de nouveaux streamers), jamais une promesse de vues.
