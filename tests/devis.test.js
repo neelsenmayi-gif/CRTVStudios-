@@ -78,7 +78,7 @@ test("échec Brevo : 502", async () => {
   globalThis.fetch = async () => new Response("err", { status: 401 });
   const res = await run(GOOD);
   assert.equal(res.status, 502);
-  assert.deepEqual(await res.json(), { error: "send_failed", status: 401 });
+  assert.deepEqual(await res.json(), { error: "send_failed", status: "401" });
 });
 
 test("échec de l'ajout du contact : la demande reste acceptée", async () => {
@@ -106,6 +106,21 @@ test("pas de copie par défaut", async () => {
   await run(GOOD);
   assert.equal(calls[0].body.cc, undefined);
   assert.equal(calls[0].body.bcc, undefined);
+});
+
+test("refus 400 de Brevo : nouvel essai minimal, la demande arrive", async () => {
+  let n = 0;
+  globalThis.fetch = async (url, init) => { calls.push({ url, body: JSON.parse(init.body) }); n++; return n === 1 ? new Response('{"code":"invalid_parameter"}', { status: 400 }) : new Response("{}", { status: 201 }); };
+  const res = await run(GOOD);
+  assert.equal(res.status, 200);
+  assert.equal(calls[1].body.replyTo, undefined);
+  assert.equal(calls[1].body.to[0].email, "pro@example.com");
+});
+
+test("variables avec espaces ou guillemets : nettoyées", async () => {
+  await run(GOOD, { ...ENV, SENDER_EMAIL: '  "site@example.com" \n', CONTACT_TO_EMAIL: " PRO@example.com " });
+  assert.equal(calls[0].body.sender.email, "site@example.com");
+  assert.equal(calls[0].body.to[0].email, "pro@example.com");
 });
 
 test("validate : nom vide refusé", () => {

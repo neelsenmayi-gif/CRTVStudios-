@@ -71,7 +71,7 @@ export async function onRequestPost(context) {
   const d = v.value;
 
   // --- Configuration
-  const missing = ["BREVO_API_KEY", "CONTACT_TO_EMAIL", "SENDER_EMAIL"].filter((k) => !env[k]);
+  const missing = ["BREVO_API_KEY", "CONTACT_TO_EMAIL", "SENDER_EMAIL"].filter((k) => !clean(env[k]));
   if (missing.length) {
     return reply(wantsJson, 503, { error: "not_configured", status: missing.join(",") });
   }
@@ -119,22 +119,51 @@ async function sendNotification(env, d) {
     `</table><p style="font-family:sans-serif;white-space:pre-wrap;border-left:3px solid #2f2bff;padding-left:12px">${esc(d.message)}</p>` +
     `<p style="font-family:sans-serif;color:#555">Répondez directement à ce mail pour écrire au client.</p>`;
 
-  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+  const senderEmail = clean(env.SENDER_EMAIL).toLowerCase();
+  const toEmail = clean(env.CONTACT_TO_EMAIL).toLowerCase();
+  const full = {
+    sender: { email: senderEmail, name: clean(env.SENDER_NAME) || "CRTV Studios" },
+    to: [{ email: toEmail }],
+    ...copies(env),
+    replyTo: { email: d.email, name: d.nom },
+    subject: `Devis — ${d.offre} — ${d.nom}`,
+    textContent: text,
+    htmlContent: html,
+    tags: ["devis-site"],
+  };
+  let res = await brevoSend(env, full);
+  let detail = "";
+  if (res.status === 400) {
+    // Brevo refuse un paramètre (souvent l'adresse saisie par le visiteur ou une copie) :
+    // on renvoie une version minimale pour que la demande arrive quand même.
+    detail = (await brevoErrorCode(res)) || "400";
+    const minimal = { sender: { email: senderEmail, name: "CRTV Studios" }, to: [{ email: toEmail }], subject: full.subject, textContent: text, htmlContent: html };
+    res = await brevoSend(env, minimal);
+  }
+  if (!res.ok) {
+    const code = await brevoErrorCode(res);
+    console.error("Brevo e-mail:", res.status, code);
+    return { ok: false, status: [res.status, code || detail].filter(Boolean).join(" ") };
+  }
+  return { ok: true, status: res.status };
+}
+
+function brevoSend(env, payload) {
+  return fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
-    headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      sender: { email: env.SENDER_EMAIL, name: env.SENDER_NAME || "CRTV Studios" },
-      to: [{ email: env.CONTACT_TO_EMAIL }],
-      ...copies(env),
-      replyTo: { email: d.email, name: d.nom },
-      subject: `Devis — ${d.offre} — ${d.nom}`,
-      textContent: text,
-      htmlContent: html,
-      tags: ["devis-site"],
-    }),
+    headers: { "api-key": clean(env.BREVO_API_KEY), "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify(payload),
   });
-  if (!res.ok) console.error("Brevo e-mail:", res.status, await safeText(res));
-  return { ok: res.ok, status: res.status };
+}
+
+// Code d'erreur Brevo (ex. « invalid_parameter »), jamais de donnée sensible.
+async function brevoErrorCode(res) {
+  try { const j = await res.clone().json(); return String(j.code || "").slice(0, 40); } catch { return ""; }
+}
+
+// Nettoie une variable d'environnement (espaces, guillemets, retours à la ligne collés par erreur).
+function clean(v) {
+  return String(v == null ? "" : v).trim().replace(/^["']|["']$/g, "").trim();
 }
 
 async function syncContact(env, d) {
@@ -146,11 +175,11 @@ async function syncContact(env, d) {
   if (!listIds.length) return;
 
   const attributes = {};
-  if (env.BREVO_NAME_ATTRIBUTE) attributes[env.BREVO_NAME_ATTRIBUTE] = d.nom;
+  if (clean(env.BREVO_NAME_ATTRIBUTE)) attributes[clean(env.BREVO_NAME_ATTRIBUTE)] = d.nom;
 
   const res = await fetch("https://api.brevo.com/v3/contacts", {
     method: "POST",
-    headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json", Accept: "application/json" },
+    headers: { "api-key": clean(env.BREVO_API_KEY), "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({ email: d.email, attributes, listIds, updateEnabled: true }),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} ${await safeText(res)}`);
@@ -189,7 +218,7 @@ function copies(env) {
   const list = String(env.NOTIFY_CC || "")
     .split(",")
     .map((e) => e.trim().toLowerCase())
-    .filter((e) => EMAIL_RE.test(e) && e !== String(env.CONTACT_TO_EMAIL || "").toLowerCase());
+    .filter((e) => EMAIL_RE.test(e) && e !== clean(env.CONTACT_TO_EMAIL).toLowerCase());
   return list.length ? { bcc: [...new Set(list)].map((email) => ({ email })) } : {};
 }
 
