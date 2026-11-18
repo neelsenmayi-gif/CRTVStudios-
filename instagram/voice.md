@@ -107,7 +107,11 @@ vague de nouveaux streamers), jamais une promesse de vues.
   À l'écran, on affiche le logo CRTV.
 - Voix off de synthèse ElevenLabs, jeune, décontractée et accrocheuse.
   Voix testée en premier : « Hugo – Punchy French Creator »
-  (voice_id 3Tp5mYhT9wrfnry9pzvV), modèle eleven_v4. **[À VALIDER à l'écoute]**
+  (voice_id 3Tp5mYhT9wrfnry9pzvV), **choisie par Neelsen le 18/11** (Maxence
+  testée et écartée). Modèle eleven_v4 (ou eleven_multilingual_v2, plus net).
+  Neelsen trouve le timbre un peu « saturé, enregistré dans une chambre » :
+  passer chaque voix off au nettoyage ffmpeg (coupe-bas, creux à 320 Hz,
+  présence à 4 kHz, de-esser, compression, -14 LUFS) avant le montage.
 - Musique : son tendance ajouté dans l'app Instagram, ou musique générée par
   ElevenLabs (instrumentale, sans voix) intégrée au montage.
 - **Extraits clients dans les reels :** uniquement AndrySoGood et Luna
