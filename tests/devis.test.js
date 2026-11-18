@@ -24,18 +24,18 @@ const run = (body, env = ENV, headers) => onRequestPost({ request: req(body, hea
 test("demande valide : e-mail envoyé puis contact ajouté", async () => {
   const res = await run(GOOD);
   assert.equal(res.status, 200);
-  assert.equal(calls.length, 2);
+  assert.equal(calls.length, 3);
   assert.equal(calls[0].url, "https://api.brevo.com/v3/smtp/email");
   assert.equal(calls[0].body.to[0].email, "pro@example.com");
   assert.equal(calls[0].body.replyTo.email, "client@example.com");
   assert.match(calls[0].body.subject, /Clipping 15/);
-  assert.equal(calls[1].url, "https://api.brevo.com/v3/contacts");
-  assert.deepEqual(calls[1].body.listIds, [3]);
+  const contact = calls.find((c) => c.url.endsWith("/contacts"));
+  assert.deepEqual(contact.body.listIds, [3]);
 });
 
 test("consentement newsletter : ajout à la seconde liste", async () => {
   await run({ ...GOOD, newsletter: "oui" });
-  assert.deepEqual(calls[1].body.listIds, [3, 4]);
+  assert.deepEqual(calls.find((c) => c.url.endsWith("/contacts")).body.listIds, [3, 4]);
 });
 
 test("le HTML du message est échappé", async () => {
@@ -121,6 +121,19 @@ test("variables avec espaces ou guillemets : nettoyées", async () => {
   await run(GOOD, { ...ENV, SENDER_EMAIL: '  "site@example.com" \n', CONTACT_TO_EMAIL: " PRO@example.com " });
   assert.equal(calls[0].body.sender.email, "site@example.com");
   assert.equal(calls[0].body.to[0].email, "pro@example.com");
+});
+
+test("accusé de réception envoyé au client, réponse vers l'adresse pro", async () => {
+  await run(GOOD);
+  const ack = calls.find((c) => c.url.endsWith("/smtp/email") && c.body.tags[0] === "devis-confirmation");
+  assert.equal(ack.body.to[0].email, "client@example.com");
+  assert.equal(ack.body.replyTo.email, "pro@example.com");
+  assert.match(ack.body.htmlContent, /Clipping 15/);
+});
+
+test("accusé de réception désactivable", async () => {
+  await run(GOOD, { ...ENV, SEND_CONFIRMATION: "non" });
+  assert.equal(calls.filter((c) => c.url.endsWith("/smtp/email")).length, 1);
 });
 
 test("validate : nom vide refusé", () => {

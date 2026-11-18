@@ -443,7 +443,7 @@ footer .tm { font-size: .8rem; color: #7c84ad; }
 .form-status a { color: #fff; }
 .success h3 { font-size: clamp(2.2rem, 8vw, 3.4rem); }
 .success p { margin-top: 12px; color: var(--mist); }
-.success .btn { margin-top: 22px; }
+.success-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .turnstile:empty { display: none; }
 
 /* ---------- Pied de page ---------- */

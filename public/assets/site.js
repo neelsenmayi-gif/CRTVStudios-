@@ -341,7 +341,9 @@
 
   function showSuccess(data) {
     var zone = document.getElementById("devis-zone");
-    zone.innerHTML = "";
+    var old = zone.querySelector(".success");
+    if (old) old.remove();
+    form.hidden = true;
     var box = document.createElement("div");
     box.className = "success";
     box.setAttribute("role", "status");
@@ -350,12 +352,30 @@
     h.tabIndex = -1;
     var p = document.createElement("p");
     p.textContent = "Merci " + (data.nom || "") + ". Nous vous répondons sous 24 à 48 h à l'adresse " + (data.email || "indiquée") + ". Pensez à vérifier vos courriers indésirables.";
+    var actions = document.createElement("div");
+    actions.className = "success-actions";
+    var again = document.createElement("button");
+    again.type = "button"; again.className = "btn"; again.textContent = "Envoyer une autre demande";
+    again.addEventListener("click", function () {
+      // Nouvelle demande : on garde nom, mail et réseau, on vide l'offre et le message.
+      box.remove();
+      form.hidden = false;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = false; btn.textContent = "Envoyer ma demande";
+      form.elements.besoin.value = "";
+      form.elements.message.value = "";
+      status.textContent = ""; status.className = "form-status";
+      startedAt = Date.now();
+      form.elements.besoin.focus();
+    });
     var a = document.createElement("a");
     a.className = "btn ghost"; a.href = "#offres"; a.textContent = "Revoir les offres";
-    box.appendChild(h); box.appendChild(p); box.appendChild(a);
+    actions.appendChild(again); actions.appendChild(a);
+    box.appendChild(h); box.appendChild(p); box.appendChild(actions);
     zone.appendChild(box);
     h.focus();
   }
+
 
   /* =========================================================
      Vidéos

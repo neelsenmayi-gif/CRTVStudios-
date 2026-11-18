@@ -80,9 +80,11 @@ export async function onRequestPost(context) {
   const sent = await sendNotification(env, d);
   if (!sent.ok) return reply(wantsJson, 502, { error: "send_failed", status: sent.status });
 
-  // --- 2) Contact Brevo (non bloquant)
+  // --- 2) Contact Brevo + 3) accusé de réception au client (non bloquants)
   const sync = syncContact(env, d).catch((e) => console.error("Brevo contact:", e && e.message));
-  if (context.waitUntil) context.waitUntil(sync); else await sync;
+  const ack = sendConfirmation(env, d).catch((e) => console.error("Brevo confirmation:", e && e.message));
+  const both = Promise.all([sync, ack]);
+  if (context.waitUntil) context.waitUntil(both); else await both;
 
   return reply(wantsJson, 200, { ok: true });
 }
@@ -146,6 +148,50 @@ async function sendNotification(env, d) {
     return { ok: false, status: [res.status, code || detail].filter(Boolean).join(" ") };
   }
   return { ok: true, status: res.status };
+}
+
+// Accusé de réception envoyé au client (désactivable avec SEND_CONFIRMATION=non).
+export function confirmationContent(d) {
+  const prenom = d.nom.split(/\s+/)[0];
+  const subject = "Votre demande de devis a bien été reçue — CRTV Studios";
+  const text =
+    `Bonjour ${prenom},\n\n` +
+    `Merci pour votre demande. Nous l'avons bien reçue et nous vous répondons sous 24 à 48 h.\n\n` +
+    `Récapitulatif :\n- Besoin : ${d.offre}\n- Réseau ou chaîne : ${d.reseau || "—"}\n- Message : ${d.message}\n\n` +
+    `Vous avez un autre besoin ou vous souhaitez préciser votre demande ? Répondez simplement à ce mail.\n\n` +
+    `À très vite,\nL'équipe CRTV Studios\nhttps://crtvstudios.fr — Instagram : @crtvstudios_\n`;
+  const row = (k, v) => `<tr><td style="padding:6px 14px 6px 0;color:#6b7194;vertical-align:top">${esc(k)}</td><td style="padding:6px 0;color:#0d0f1a">${esc(v)}</td></tr>`;
+  const html =
+    `<div style="background:#f3f4f8;padding:28px 12px;font-family:Helvetica,Arial,sans-serif">` +
+    `<div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden">` +
+    `<div style="background:#05060d;padding:22px 28px;color:#ffffff;font-size:20px;font-weight:800;letter-spacing:-.02em">CRTV Studios` +
+    `<div style="height:3px;width:56px;margin-top:10px;background:linear-gradient(90deg,#ff2f8e,#ff9c55);border-radius:2px"></div></div>` +
+    `<div style="padding:28px">` +
+    `<p style="margin:0 0 14px;font-size:16px;color:#0d0f1a">Bonjour ${esc(prenom)},</p>` +
+    `<p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:#2a2e45">Merci pour votre demande. Nous l'avons bien reçue et nous vous répondons <strong>sous 24 à 48&nbsp;h</strong>.</p>` +
+    `<table style="font-size:14px;border-collapse:collapse;margin:0 0 18px">${row("Besoin", d.offre)}${row("Réseau ou chaîne", d.reseau || "—")}${row("Message", d.message)}</table>` +
+    `<p style="margin:0 0 18px;font-size:15px;line-height:1.55;color:#2a2e45">Vous avez un autre besoin ou vous souhaitez préciser votre demande&nbsp;? Répondez simplement à ce mail.</p>` +
+    `<p style="margin:0;font-size:15px;color:#0d0f1a">À très vite,<br><strong>L'équipe CRTV Studios</strong></p>` +
+    `</div><div style="padding:16px 28px;background:#f7f8fb;font-size:12px;color:#6b7194">` +
+    `<a href="https://crtvstudios.fr" style="color:#2f2bff">crtvstudios.fr</a> · Instagram <a href="https://www.instagram.com/crtvstudios_/" style="color:#2f2bff">@crtvstudios_</a></div>` +
+    `</div></div>`;
+  return { subject, text, html };
+}
+
+async function sendConfirmation(env, d) {
+  if (/^(non|no|false|0)$/i.test(clean(env.SEND_CONFIRMATION))) return;
+  const senderEmail = clean(env.SENDER_EMAIL).toLowerCase();
+  const c = confirmationContent(d);
+  const res = await brevoSend(env, {
+    sender: { email: senderEmail, name: clean(env.SENDER_NAME) || "CRTV Studios" },
+    to: [{ email: d.email, name: d.nom }],
+    replyTo: { email: clean(env.CONTACT_TO_EMAIL).toLowerCase() || senderEmail, name: "CRTV Studios" },
+    subject: c.subject,
+    textContent: c.text,
+    htmlContent: c.html,
+    tags: ["devis-confirmation"],
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${await brevoErrorCode(res)}`);
 }
 
 function brevoSend(env, payload) {
