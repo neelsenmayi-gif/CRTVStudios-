@@ -183,7 +183,7 @@ async function sendConfirmation(env, d) {
   if (/^(non|no|false|0)$/i.test(clean(env.SEND_CONFIRMATION))) return;
   const senderEmail = clean(env.SENDER_EMAIL).toLowerCase();
   const c = confirmationContent(d);
-  const res = await brevoSend(env, {
+  let res = await brevoSend(env, {
     sender: { email: senderEmail, name: clean(env.SENDER_NAME) || "CRTV Studios" },
     to: [{ email: d.email, name: d.nom }],
     replyTo: { email: clean(env.CONTACT_TO_EMAIL).toLowerCase() || senderEmail, name: "CRTV Studios" },
@@ -192,7 +192,25 @@ async function sendConfirmation(env, d) {
     htmlContent: c.html,
     tags: ["devis-confirmation"],
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status} ${await brevoErrorCode(res)}`);
+  let first = "";
+  if (!res.ok) {
+    // Brevo refuse un paramètre : nouvel essai minimal (texte seul, sans réponse-à ni nom).
+    first = `${res.status} ${await brevoErrorCode(res)}`.trim();
+    res = await brevoSend(env, { sender: { email: senderEmail, name: "CRTV Studios" }, to: [{ email: d.email }], subject: c.subject, textContent: c.text });
+  }
+  if (!res.ok) {
+    const code = `${res.status} ${await brevoErrorCode(res)}`.trim();
+    console.error("Brevo confirmation:", first, "/", code);
+    // Alerte interne : l'accusé de réception n'est pas parti, on prévient l'adresse pro.
+    await brevoSend(env, {
+      sender: { email: senderEmail, name: "CRTV Studios" },
+      to: [{ email: clean(env.CONTACT_TO_EMAIL).toLowerCase() || senderEmail }],
+      subject: `Accusé de réception non envoyé — ${d.nom}`,
+      textContent: `L'accusé de réception automatique n'a pas pu être envoyé à ${d.email}.\nCode Brevo : ${first || "-"} / ${code}.\nLa demande elle-même est bien arrivée (mail « Devis — … »). Pensez à répondre au client.`,
+      tags: ["devis-alerte"],
+    }).catch(() => {});
+    throw new Error(`HTTP ${first} / ${code}`);
+  }
 }
 
 function brevoSend(env, payload) {
