@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Stories CRTV</title>
+<style>
+@font-face { font-family: "Bricolage"; src: url("../../public/assets/fonts/bricolage.woff2") format("woff2"); font-weight: 400 800; font-stretch: 80% 100%; }
+@font-face { font-family: "Nunito"; src: url("../../public/assets/fonts/nunito.woff2") format("woff2"); font-weight: 700 800; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #000; font-family: "Bricolage", sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
+.f { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #05060d; }
+.f::before { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 15% 12%, rgba(47,43,255,.75), transparent 45%), radial-gradient(circle at 90% 85%, rgba(36,34,170,.8), transparent 45%), radial-gradient(circle at 80% 30%, rgba(255,47,142,.18), transparent 40%); }
+.f::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, transparent 50%, rgba(2,3,8,.8) 100%); }
+.in { position: absolute; inset: 0; z-index: 2; }
+.logo { position: absolute; left: 50%; top: 250px; width: 130px; margin-left: -65px; filter: drop-shadow(0 0 22px rgba(47,43,255,.9)); }
+.g { background: linear-gradient(100deg, #ff2f8e, #ff9c55); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tag { font-family: "Nunito"; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.num { position: absolute; left: 110px; top: 560px; font: 800 300px/1 "Bricolage"; letter-spacing: -.04em; }
+.h { position: absolute; left: 110px; right: 110px; font-weight: 800; letter-spacing: -.02em; line-height: 1.02; }
+.p { position: absolute; left: 110px; right: 110px; font: 700 54px/1.3 "Nunito"; color: rgba(235,238,255,.88); }
+.bar { position: absolute; left: 110px; top: 470px; display: flex; gap: 14px; }
+.bar i { width: 90px; height: 10px; border-radius: 5px; background: rgba(255,255,255,.22); }
+.bar i.on { background: linear-gradient(90deg, #ff2f8e, #ff9c55); }
+.cta { position: absolute; left: 110px; right: 110px; top: 1330px; padding: 40px 46px; border-radius: 40px; background: rgba(255,255,255,.08); border: 3px solid rgba(255,255,255,.3); font: 800 62px/1.15 "Bricolage"; text-align: center; }
+.card { position: absolute; left: 110px; right: 110px; border-radius: 32px; padding: 34px 40px; background: linear-gradient(160deg, rgba(47,43,255,.45), rgba(14,16,48,.92)); border: 2px solid rgba(140,150,255,.35); font: 800 50px/1.25 "Nunito"; }
+.card b { font-family: "Bricolage"; }
+/* couvertures de stories à la une : tout tient dans le cercle central */
+.cov .ring { position: absolute; left: 50%; top: 50%; width: 760px; height: 760px; margin: -380px 0 0 -380px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #3b37ff, #12124a 70%); box-shadow: 0 0 0 10px rgba(255,255,255,.12), 0 0 140px rgba(47,43,255,.8); display: grid; place-items: center; }
+.cov svg { width: 380px; height: 380px; }
+/* cadre vidéo pour les réalisations */
+.hole { position: absolute; left: 180px; top: 500px; width: 720px; height: 1280px; border-radius: 44px; border: 6px solid rgba(255,255,255,.9); box-shadow: 0 0 90px rgba(47,43,255,.7); }
+</style>
+</head>
+<body>
+<!-- Comment ça marche : 5 écrans -->
+<div class="f" id="m1"><div class="in">
+  <img class="logo" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="tag" style="position:absolute;left:110px;top:520px;font-size:40px;color:#9d9aff">Creative Studios</div>
+  <div class="h" style="top:600px;font-size:150px">Comment<br>ça <span class="g">marche ?</span></div>
+  <div class="p" style="top:1000px">4 étapes. Vous nous écrivez, on s'occupe du reste.</div>
+  <div class="card" style="top:1230px">01 Vous nous écrivez<br>02 On cale tout ensemble<br>03 On monte<br>04 Vous validez</div>
+</div></div>
+
+<div class="f" id="m2"><div class="in">
+  <img class="logo" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="bar"><i class="on"></i><i></i><i></i><i></i></div>
+  <div class="num g">01</div>
+  <div class="h" style="top:900px;font-size:120px">Vous nous écrivez.</div>
+  <div class="p" style="top:1180px">En DM Instagram ou sur crtvstudios.fr. Décrivez votre projet en quelques mots : plateforme, type de contenu, rythme.</div>
+  <div class="tag" style="position:absolute;left:110px;top:1590px;font-size:40px;color:#9d9aff">Réponse sous 24 à 48 h</div>
+</div></div>
+
+<div class="f" id="m3"><div class="in">
+  <img class="logo" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="bar"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+  <div class="num g">02</div>
+  <div class="h" style="top:900px;font-size:120px">On cale tout ensemble.</div>
+  <div class="p" style="top:1180px">Format, délai et prix vous sont annoncés, puis validés avec vous avant de commencer. Pas de surprise.</div>
+</div></div>
+
+<div class="f" id="m4"><div class="in">
+  <img class="logo" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+  <div class="num g">03</div>
+  <div class="h" style="top:900px;font-size:120px">On s'occupe du reste.</div>
+  <div class="p" style="top:1180px">Montage, sous-titres, musique, habillage. Chaque vidéo est relue par notre équipe avant de vous être livrée.</div>
+</div></div>
+
+<div class="f" id="m5"><div class="in">
+  <img class="logo" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+  <div class="num g">04</div>
+  <div class="h" style="top:900px;font-size:120px">Vous validez.</div>
+  <div class="p" style="top:1060px">On relit ensemble, on ajuste si besoin. Vous publiez, on prépare la suite.</div>
+  <div class="cta">Votre projet ?<br><span class="g">Écrivez DEVIS en DM</span></div>
+</div></div>
+
+<!-- Cadres des réalisations (la vidéo du client vient dans le trou) -->
+<div class="f" id="r-luna"><div class="in">
+  <img class="logo" style="top:140px;width:110px;margin-left:-55px" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="tag" style="position:absolute;left:0;right:0;text-align:center;top:285px;font-size:32px;color:#9d9aff">Réalisation</div>
+  <div class="h" style="top:345px;font-size:72px;text-align:center"><span class="g">Luna Aesthetic</span></div><div class="tag" style="position:absolute;left:0;right:0;text-align:center;top:435px;font-size:30px">Institut de beauté · Suisse</div>
+  <div class="hole"></div>
+</div></div>
+<div class="f" id="r-andry"><div class="in">
+  <img class="logo" style="top:140px;width:110px;margin-left:-55px" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="tag" style="position:absolute;left:0;right:0;text-align:center;top:285px;font-size:32px;color:#9d9aff">Réalisation</div>
+  <div class="h" style="top:345px;font-size:72px;text-align:center"><span class="g">AndrySoGood</span></div><div class="tag" style="position:absolute;left:0;right:0;text-align:center;top:435px;font-size:30px">Créateur · Clips de stream</div>
+  <div class="hole"></div>
+</div></div>
+<div class="f" id="r-fin"><div class="in">
+  <img class="logo" src="../../public/assets/logo-blanc.svg" alt="">
+  <div class="h" style="top:640px;font-size:130px">À qui <span class="g">le tour ?</span></div>
+  <div class="p" style="top:930px">Créateurs, streamers, commerces, médias : on monte vos reels, shorts et clips.</div>
+  <div class="cta">Écrivez <span class="g">DEVIS</span> en DM</div>
+</div></div>
+
+<!-- Couvertures des stories à la une -->
+<div class="f cov" id="c-real"><div class="in"><div class="ring">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 9.2v5.6l4.6-2.8z" fill="#fff"/></svg>
+</div></div></div>
+<div class="f cov" id="c-how"><div class="in"><div class="ring">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><path d="M5 8v8"/><path d="M10 6h10M10 12h10M10 18h7"/><circle cx="5" cy="12" r="2"/></svg>
+</div></div></div>
+</body>
+</html>
