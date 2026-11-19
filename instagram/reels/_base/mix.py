@@ -10,6 +10,7 @@ Les temps sont ceux de l'animation ; la voix et l'image sont décalées de 0,2 s
 import json, os, subprocess, sys
 
 OFFSET = 0.2
+SFX_GAIN = -4  # baisse générale des effets sous la voix (demande de Neelsen, 19/11)
 base = os.path.dirname(os.path.abspath(__file__))
 reel = os.path.abspath(sys.argv[1])
 name = sys.argv[2]
@@ -32,7 +33,7 @@ for i, (t, n, g) in enumerate(cues):
     start = t - (dur(path) if end_anchor else 0) + OFFSET
     args += ["-i", path]
     ms = max(0, int(round(start * 1000)))
-    filters.append(f"[{i+2}:a]volume={g}dB,adelay={ms}|{ms}[s{i}]")
+    filters.append(f"[{i+2}:a]volume={g + SFX_GAIN}dB,adelay={ms}|{ms}[s{i}]")
     labels.append(f"[s{i}]")
 filters.append("".join(labels) + f"amix=inputs={len(labels)}:normalize=0:duration=first,atrim=0:{total},alimiter=limit=0.85:level=false[a]")
 out = os.path.join(out_dir, name + ".mp4")
