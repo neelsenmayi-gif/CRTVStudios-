@@ -11,7 +11,7 @@ Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour 
 - CRTV Studios : agence de production audiovisuelle (production uniquement, pas de campagnes publicitaires). Shorts, reels, TikTok, clipping de streams, vidéos YouTube longues, contenus professionnels.
 - Cibles : marques, boutiques, créateurs, streamers, tout business qui a besoin de vidéo (fast-food, trading, services, instituts…). Push prévu sur les nouveaux créateurs et streamers avec la sortie de GTA 6.
 - Fonctionnement : production presque entièrement prise en charge (le client demande, CRTV s'occupe du reste), devis sur mesure, réseau de monteurs freelances qualifiés. Chaque livraison est validée par CRTV avant envoi au client.
-- Géographie : fondateur en Île-de-France, travail à distance. Clients actuels en France, Suisse et Belgique ; cible élargie à **toute la zone francophone** (décision de Neelsen le 18/11 : FAQ, pied de page et JSON-LD du site mis à jour).
+- Géographie : fondateur en Île-de-France, travail à distance. Clients actuels en France, Suisse et Belgique ; cible élargie à **toute la zone francophone** (décision de Neelsen le 18/11 : FAQ, pied de page et JSON-LD du site mis à jour ; **publié sur main le 19/11, commit 0a9bace, déploiement Cloudflare production réussi**).
 - Équipe : Neelsen (fondateur, président, direction, prospection, relation client), Lucas Magré (associé, comptabilité et trésorerie). SAS prévue, immatriculation début janvier 2027 (75 % / 25 %).
 - Valeurs : créativité, réactivité, tendance, professionnalisme, fiabilité.
 - Ligne rouge : ne jamais prétendre à une expertise qu'ils n'ont pas ; aucun contenu discriminatoire, haineux, trompeur ou illégal ; toutes les collaborations sont écrites et signées.
