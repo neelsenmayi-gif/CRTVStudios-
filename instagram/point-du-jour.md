@@ -13,7 +13,7 @@
 
 ## À faire
 - [ ] Neelsen : coller la bio (option A, B ou C) + nom « CRTV Studios | Montage vidéo »
-- [ ] Neelsen : programmer les 5 reels (19/11 8 h 40 → 23/11 14 h 40) et publier les stories à la une
+- [ ] Neelsen : programmer les 5 reels (19/11 12 h 10 → 23/11 14 h 40) et publier les stories à la une
 - [ ] Neelsen + Claude : configurer ManyChat (CLIP / DEVIS) en interface, avec captures d'écran (l'API ne crée pas d'automatisation)
 - [ ] Lucas : check des reels, légendes, DM et planning ; vérifier son accès au plan de lancement (Drive)
 - [ ] Neelsen : vérifier le compte pro (catégorie Production vidéo + bouton e-mail)

@@ -6,7 +6,7 @@ Légendes : `instagram/legendes/`.
 
 | Jour | Heure | Reel | Note |
 |---|---|---|---|
-| Jeu 19/11 | 08:40 | 01 GTA 6 clipping | Lendemain de la sortie (nuit du 18 au 19) : le sujet est chaud dès le matin |
+| Jeu 19/11 | 12:10 | 01 GTA 6 clipping | Lendemain de la sortie ; midi = les joueurs de la nuit sont réveillés et Neelsen est dispo pour répondre aux commentaires |
 | Ven 20/11 | 18:40 | 05 GTA 6 YouTube | |
 | Sam 21/11 | 12:10 | 02 Combien vous a coûté | |
 | Dim 22/11 | 19:10 | 04 Médias, coachs, entreprises | |
