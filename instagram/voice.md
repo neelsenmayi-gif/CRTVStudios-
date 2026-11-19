@@ -179,3 +179,9 @@ résultat client reste `{{chiffre}}` tant qu'il n'est pas fourni.
   plateforme ? »).
 - **Lien de la bio :** https://crtvstudios.fr/ (avec UTM, voir
   DEPLOIEMENT.md). Le DM Instagram est aussi un canal de commande accepté.
+
+## Ce qui marche (mis à jour chaque dimanche)
+
+Rien de mesuré pour l'instant (premier reel publié le 19/11). Chaque dimanche :
+garder les accroches et formats qui retiennent au-delà de 3 s, abandonner ceux
+qui décrochent, noter ici la règle tirée de chaque bilan.

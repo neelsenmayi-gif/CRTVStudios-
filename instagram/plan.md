@@ -18,3 +18,9 @@ Règles :
 - 20 min d'engagement par jour avant de publier : 5 comptes « portée », 3 pairs, 2 clients potentiels.
 - Musique : son tendance ajouté dans l'app, volume bas sous la voix.
 - Les heures sont des points de départ ; c'est l'accroche des 2 premières secondes qui décide de la portée.
+
+## Routine du dimanche (décidée le 19/11)
+1. Bilan : Claude lit les stats Instagram via Windsor (vues, temps de visionnage, abandon dans les 3 premières secondes, partages, enregistrements, abonnés) et remplit `instagram/log.md`, puis lance ig-audit : ce qui a marché, ce qui n'a pas marché, pourquoi.
+2. Leçons : les conclusions sont ajoutées à `instagram/voice.md` (section « Ce qui marche ») pour que chaque nouvelle série en tienne compte.
+3. Production : 4 à 5 reels de la semaine (scripts, voix, motion design, effets, musique), légendes et planning.
+4. Stories : choisir 3 idées dans `instagram/stories/idees.md`.
