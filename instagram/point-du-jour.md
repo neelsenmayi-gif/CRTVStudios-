@@ -1,5 +1,11 @@
 # Point du 19/11/2026 (à relire en début de session)
 
+## Check complet du 19/11 (11 h)
+- OK : site (18/18 tests, 6 pages sans erreur), Cloudflare (prod 0a9bace, domaines + SSL actifs), DNS mail (MX, SPF, DKIM IONOS + Brevo, DMARC), Brevo (domaine authentifié, 10/10 mails livrés, 0 rebond), Windsor, ElevenLabs Starter (4 624 / 38 266), GitHub.
+- PROBLÈME : l'accusé de réception client n'est jamais parti en production (Brevo refuse la requête, erreur invisible). Correctif prêt sur la branche Claude (nouvel essai minimal + alerte à contact@), à passer sur main après accord, puis test réel par Neelsen.
+- Lucas n'a pas accès au plan de lancement (Drive : seul le compte CRTV est propriétaire) : le partager.
+- Instagram : reel 01 publié le 19/11 à 10 h 11 ; bio encore l'ancienne (données Windsor du matin).
+
 ## Fait le 18-19/11
 - Site : formulaire réparé, accusé de réception client, bouton « autre demande », 3 réalisations vidéo, pages légales, accès Cloudflare pour Claude, zone francophone en production (0a9bace).
 - Instagram : voice.md, 5 reels (voix Hugo, motion design, effets, musique originale), 5 légendes, planning 1 reel/jour, DM types, bio (3 options), stories à la une (Comment ça marche + Réalisations), 10 idées de stories, plan de lancement à jour dans le Drive, routine du dimanche.
