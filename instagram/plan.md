@@ -8,6 +8,7 @@ Légendes : `instagram/legendes/`.
 |---|---|---|---|
 | Jeu 19/11 | 12:10 | 01 GTA 6 clipping | Lendemain de la sortie ; midi = les joueurs de la nuit sont réveillés et Neelsen est dispo pour répondre aux commentaires |
 | Ven 20/11 | 18:40 | 05 GTA 6 YouTube | |
+| Sam 21/11 | 09:40 | 01b GTA 6 nouvelle accroche (« Streamers GTA 6 : votre live de 4 h… ») | Publié par Claude via Windsor (tâche planifiée) ; test d'accroche contre le 01 |
 | Sam 21/11 | 12:10 | 02 Combien vous a coûté | |
 | Dim 22/11 | 19:10 | 04 Médias, coachs, entreprises | |
 | Lun 23/11 | 14:40 | 03 Commerces + Luna Aesthetic | Idéalement en collab avec Luna |
