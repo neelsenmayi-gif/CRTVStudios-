@@ -9,7 +9,8 @@ Les temps sont ceux de l'animation ; la voix et l'image sont décalées de 0,2 s
 """
 import json, os, subprocess, sys
 
-OFFSET = 0.2
+# Décalage voix/image du rendu (0 depuis le 20/11 ; 0,2 pour les reels 01 et 05 rendus avant).
+OFFSET = float(sys.argv[sys.argv.index("--offset") + 1]) if "--offset" in sys.argv else 0.0
 SFX_GAIN = -4  # baisse générale des effets sous la voix (demande de Neelsen, 19/11)
 base = os.path.dirname(os.path.abspath(__file__))
 reel = os.path.abspath(sys.argv[1])

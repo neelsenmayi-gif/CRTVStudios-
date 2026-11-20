@@ -48,7 +48,8 @@ for (let k = 0; k < 6; k++) {
 const words = [...document.querySelectorAll(".w")].map((el) => ({ el, s: parseFloat(el.dataset.s) }));
 
 function sceneAlpha([a, b], t) {
-  return Math.min(eOut(p(t, a - 0.02, a + 0.18)), 1 - eInOut(p(t, b - 0.14, b + 0.06)));
+  const inn = a <= 0 ? 1 : eOut(p(t, a - 0.02, a + 0.18)); // la première scène est déjà là à l'image 1
+  return Math.min(inn, 1 - eInOut(p(t, b - 0.14, b + 0.06)));
 }
 
 function render(t) {
@@ -60,7 +61,7 @@ function render(t) {
   gctx.putImageData(grainFrames[((Math.floor(t * 30) % 6) + 6) % 6], 0, 0);
 
   let fl = 0;
-  for (const h of R.hits || []) if (t >= h) fl = Math.max(fl, 1 - p(t, h, h + 0.35));
+  for (const h of R.hits || []) if (h > 0 && t >= h) fl = Math.max(fl, 1 - p(t, h, h + 0.35));
   $("#flash").style.opacity = (fl * 0.5).toFixed(3);
   let sw = 0;
   for (const s of R.sweeps || []) { const x = p(t, s, s + 0.9); if (x > 0 && x < 1) sw = x; }
@@ -70,6 +71,13 @@ function render(t) {
   for (const id in R.scenes) $("#" + id).style.opacity = sceneAlpha(R.scenes[id], t).toFixed(3);
 
   for (const { el, s } of words) {
+    // Accroche : visible dès la première image, petit rebond quand le mot est prononcé.
+    if (R.hookEnd && s < R.hookEnd) {
+      const k = Math.sin(Math.PI * p(t, s - 0.02, s + 0.25));
+      el.style.opacity = "1"; el.style.filter = "none";
+      el.style.transform = `scale(${(1 + 0.07 * k).toFixed(3)})`;
+      continue;
+    }
     const x = p(t, s - 0.04, s + 0.22);
     el.style.opacity = eOut(x).toFixed(3);
     el.style.transform = `translateY(${((1 - eBack(x)) * 60).toFixed(1)}px) scale(${lerp(0.86, 1, eOut(x)).toFixed(3)})`;

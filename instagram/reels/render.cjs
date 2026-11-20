@@ -17,6 +17,8 @@ const opt = (name, def) => {
 const fps = Number(opt("fps", 30));
 const duration = Number(opt("duration", 24));
 const stills = opt("stills", null);
+// Décalage voix/image au début (0 depuis le 20/11 : la première image doit déjà accrocher).
+const offset = Number(opt("offset", 0));
 
 (async () => {
   const browser = await chromium.launch();
@@ -41,7 +43,7 @@ const stills = opt("stills", null);
     "-y", "-loglevel", "error",
     "-f", "image2pipe", "-framerate", String(fps), "-c:v", "mjpeg", "-i", "-",
     "-i", voice,
-    "-filter_complex", "[1:a]adelay=200|200,apad[a]",
+    "-filter_complex", `[1:a]adelay=${Math.round(offset * 1000)}|${Math.round(offset * 1000)},apad[a]`,
     "-map", "0:v", "-map", "[a]",
     "-t", String(duration),
     "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-r", String(fps),
@@ -51,8 +53,6 @@ const stills = opt("stills", null);
   ], { stdio: ["pipe", "inherit", "inherit"] });
 
   const total = Math.round(duration * fps);
-  // La voix est décalée de 0,2 s (adelay) : l'animation suit le même décalage.
-  const offset = 0.2;
   for (let i = 0; i < total; i++) {
     const t = i / fps - offset;
     await page.evaluate((x) => window.render(x), t);
