@@ -182,6 +182,13 @@ résultat client reste `{{chiffre}}` tant qu'il n'est pas fourni.
 
 ## Ce qui marche (mis à jour chaque dimanche)
 
-Rien de mesuré pour l'instant (premier reel publié le 19/11). Chaque dimanche :
+Rien de mesuré pour l'instant (premier reel publié le 19/11).
+
+- 20/11 (1 seul reel, confiance faible) : reel 01 montré à ~185 non-abonnés,
+  62 % partis avant 3 s, durée moyenne 7 s sur 24 s. Règle provisoire : le
+  premier écran doit déjà afficher la promesse (texte lisible dès l'image 1,
+  pas de démarrage à vide ni de mots qui apparaissent en flou), s'adresser à
+  la cible (« Streamers GTA 6 : … ») plutôt qu'annoncer une actu (« GTA 6
+  débarque »). Supprimer le décalage de 0,2 s au début du rendu. Chaque dimanche :
 garder les accroches et formats qui retiennent au-delà de 3 s, abandonner ceux
 qui décrochent, noter ici la règle tirée de chaque bilan.
