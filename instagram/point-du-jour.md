@@ -1,5 +1,7 @@
 # Point du 21/11/2026 (à relire en début de session)
 
+Tâches priorisées : voir `memoire/taches.md` (fait foi). Mémoire complète : `memoire/memoire-crtv.md`.
+
 ## Check complet du 21/11 (10 h 35)
 - Instagram : 3 reels en ligne (01 le 19/11, 05 le 20/11 à 14 h 26, 01b le 21/11 à 10 h 33 publié par Claude). 8 abonnés. Nom « CRTV STUDIOS | Montage vidéo » OK ; bio = version de Neelsen (« NOUS CRÉONS VOS IDÉES 💡 » + liste), sans appel à l'action.
 - Stats : 01 = 226 vues, abandon 3 s 62 %, 7,0 s moy. ; 05 = 169 vues, abandon 58,5 %, 5,4 s moy. ; 0 partage, 0 commentaire, 0 abonné gagné.

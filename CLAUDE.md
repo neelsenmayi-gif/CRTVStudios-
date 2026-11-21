@@ -2,6 +2,8 @@
 
 Ce fichier résume toute la discussion de cadrage avec Neelsen (fondateur) pour que Claude Code puisse construire et faire évoluer le site sans repartir de zéro. Langue du site et des échanges : français.
 
+**À lire en premier à chaque session : `memoire/memoire-crtv.md` (mémoire complète : entreprise, règles, Instagram, production vidéo, outils et identifiants) et `memoire/taches.md` (tâches priorisées). Check du matin : skill `.claude/skills/bilan-instagram/`.**
+
 ## Objectif du site
 - Site de présentation d'une page (mobile d'abord), destiné au lien en bio du compte Instagram CRTV Studios. Le trafic arrive depuis un téléphone.
 - Mission : en 10 secondes, comprendre ce que fait CRTV, voir les prix, demander un devis (ou écrire en DM Instagram).
