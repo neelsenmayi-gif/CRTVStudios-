@@ -93,5 +93,7 @@ résume TOUT le reste et pointe vers les détails. Mettre à jour à chaque déc
 
 ## 7. Routines
 - Tous les matins 7 h 38 : tâche planifiée « Bilan Instagram du matin » → skill `bilan-instagram`.
+  Condition de Neelsen (21/11) : rien n'est transmis sans double vérification (2 relevés concordants +
+  recalcul par `.claude/skills/bilan-instagram/verifier.py`) ; tout chiffre douteux est marqué « non vérifié ».
 - Dimanche : bilan de la semaine + production des reels de la semaine suivante (`instagram/plan.md`).
 - Liste des tâches priorisée : `memoire/taches.md` (Neelsen fixe les priorités).

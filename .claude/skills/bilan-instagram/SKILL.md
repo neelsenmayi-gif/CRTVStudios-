@@ -74,13 +74,31 @@ mais toujours au minimum ig-audit + ig-plan + ig-story.
 - **ManyChat, Gmail, pub Meta** : état connu dans la mémoire (pas d'API à tester), le rappeler s'il bloque.
 - **Tâches planifiées / fichiers temporaires** : `public/media-temp/` vide sur la branche sauf publication prévue.
 
+## 4 bis. CONDITION D'ENVOI : double vérification (obligatoire, demandée par Neelsen le 21/11)
+Ne rien transmettre à Neelsen tant que ces contrôles ne sont pas passés :
+1. **Deux relevés indépendants** : faire DEUX séries d'appels Windsor séparées (relevé A puis relevé B,
+   quelques minutes d'écart), enregistrées dans le bloc-notes (`releve_A.json`, `releve_B.json`,
+   format : `{"profil": {...}, "reels": [...], "compte": [...]}`, ajouter `duree_s` à chaque reel).
+2. **Script de contrôle** : `python3 .claude/skills/bilan-instagram/verifier.py releve_A.json releve_B.json instagram/stats/<veille>.json`
+   → il compare A et B, vérifie la cohérence (portée ≤ vues, taux entre 0 et 1, aucun compteur qui baisse
+   par rapport à la veille…) et RECALCULE tous les indicateurs dans `calculs.json`.
+3. **Les chiffres du message viennent uniquement de `calculs.json` et du relevé B** (jamais d'un calcul à la main).
+   Relire chaque nombre du message contre ces fichiers avant l'envoi.
+4. **Outils** : chaque ligne du tableau des outils doit venir d'un appel qui a réellement répondu ;
+   un appel en erreur = ⚠️ « non vérifié » avec la raison, jamais ✅ par défaut.
+5. **En cas d'écart** : refaire les deux relevés une fois. Si l'écart persiste, envoyer le bilan avec
+   les chiffres concernés marqués « ⚠️ non vérifié » et l'explication — ne jamais présenter un chiffre
+   douteux comme sûr. Les alertes du script (ex. portée à 0 par retard de Meta) sont signalées telles quelles.
+6. **Ligne de preuve** en fin de message : « ✔️ Chiffres vérifiés : 2 relevés concordants + recalcul
+   automatique (HH:MM) » ou le détail des écarts.
+
 ## 5. Tâches
 - Mettre à jour `memoire/taches.md` : cocher ce qui est fait (avec la date), ajouter les nouvelles
   tâches détectées avec une priorité « proposé », sans changer les priorités fixées par Neelsen.
 - Présenter les tâches triées P1 → P2 → P3, en séparant Neelsen / Lucas / Claude.
 
 ## 6. Enregistrer
-- Relevé du jour : `instagram/stats/AAAA-MM-JJ.json` (profil + reels + compte, valeurs brutes).
+- Relevé du jour : `instagram/stats/AAAA-MM-JJ.json` = relevé B vérifié (+ `calculs.json` dans `instagram/stats/AAAA-MM-JJ-calculs.json`).
 - Colonnes de `instagram/log.md` (vues 24 h / 7 j, abonnés gagnés, DM reçus).
 - Enseignement net (confiance moyenne ou forte) → « Ce qui marche » de `instagram/voice.md`.
 - Toute nouvelle info durable (outil, décision, identifiant) → `memoire/memoire-crtv.md`.
@@ -105,4 +123,5 @@ P1 … · P2 … · P3 …   (Neelsen / Lucas / Claude)
 Publications du jour : …
 
 Une question seulement si une décision de Neelsen est nécessaire.
+✔️ Chiffres vérifiés : 2 relevés concordants + recalcul automatique (HH:MM)
 ```
