@@ -25,14 +25,26 @@
 - DM types : `instagram/dm-types.md`
 - Stories : `instagram/stories/png/` (m1 à m5 + c-how ; story-realisation-luna/andry + r-fin + c-real) · Idées : `instagram/stories/idees.md`
 
-## À faire
-- [ ] Neelsen : coller la bio (option A, B ou C) + nom « CRTV Studios | Montage vidéo »
-- [ ] Neelsen : programmer les 5 reels (19/11 12 h 10 → 23/11 14 h 40) et publier les stories à la une
-- [ ] Neelsen + Claude : configurer ManyChat (CLIP / DEVIS) en interface, avec captures d'écran (l'API ne crée pas d'automatisation)
-- [ ] Lucas : check des reels, légendes, DM et planning ; vérifier son accès au plan de lancement (Drive)
-- [ ] Neelsen : vérifier le compte pro (catégorie Production vidéo + bouton e-mail)
-- [ ] Neelsen : demander à Luna un post en collab + accord écrit pour l'extrait
-- [ ] Neelsen : 20 min de commentaires par jour ; envoyer à Claude 10 comptes pour ig-comment
-- [ ] Neelsen : épingler 3 reels une fois publiés (01, 03, 02)
-- [ ] Neelsen : supprimer l'ancien plan de lancement dans le Drive et le dossier vide « CRTV Studios – Reels (18-19 nov.) »
-- [ ] Dimanche 22/11 : premier bilan (stats Windsor → log.md → ig-audit → voice.md) + production de la série suivante
+## À faire (mis à jour le 21/11 à 11 h)
+### Neelsen, aujourd'hui
+- [ ] Reel 02 à 12 h 10 (nouvelle version envoyée le 20/11)
+- [ ] Bio : ajouter la ligne « Écrivez DEVIS en DM » sous « NOUS CRÉONS VOS IDÉES 💡 »
+- [ ] Répondre aux commentaires des reels (aucun pour l'instant)
+### Neelsen, cette semaine
+- [ ] Partager le plan de lancement (Drive) avec Lucas — toujours pas fait
+- [ ] ManyChat CLIP / DEVIS (avec Claude, par captures d'écran)
+- [ ] Stories à la une Comment ça marche + Réalisations
+- [ ] Compte pro : catégorie Production vidéo + bouton e-mail
+- [ ] Épingler 3 reels
+- [ ] Demander à Luna un post en collab + accord écrit
+- [ ] 20 min de commentaires par jour ; envoyer 10 comptes cibles à Claude
+- [ ] Reconnecter le connecteur Gmail dans claude.ai (sign-in expiré)
+- [ ] Supprimer l'ancien plan de lancement et le dossier vide « CRTV Studios – Reels (18-19 nov.) » dans le Drive
+### Décisions attendues de Neelsen
+- [ ] Feu vert pour le correctif formulaire (alerte sur contact@ si Brevo refuse)
+- [ ] Connecteur pub Meta (Windsor for Paid Media conseillé) + page Facebook reliée + compte pub
+### Lucas
+- [ ] Check des reels, légendes, DM et planning
+### Claude
+- [ ] Dim. 22/11 : bilan (01 vs 05 vs 01b) + leçons dans voice.md + série de la semaine
+- [ ] Lun. 23/11 : reel 03 commerces (14 h 40), rappel collab Luna
