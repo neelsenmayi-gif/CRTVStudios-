@@ -1,4 +1,12 @@
-# Point du 19/11/2026 (à relire en début de session)
+# Point du 21/11/2026 (à relire en début de session)
+
+## Check complet du 21/11 (10 h 35)
+- Instagram : 3 reels en ligne (01 le 19/11, 05 le 20/11 à 14 h 26, 01b le 21/11 à 10 h 33 publié par Claude). 8 abonnés. Nom « CRTV STUDIOS | Montage vidéo » OK ; bio = version de Neelsen (« NOUS CRÉONS VOS IDÉES 💡 » + liste), sans appel à l'action.
+- Stats : 01 = 226 vues, abandon 3 s 62 %, 7,0 s moy. ; 05 = 169 vues, abandon 58,5 %, 5,4 s moy. ; 0 partage, 0 commentaire, 0 abonné gagné.
+- PREMIER PROSPECT : demande de devis Short Solo le 20/11 à 21 h 14 (« Gemma »), reçue sur contact@. Son adresse mail est inactive (rebond Gmail) : la recontacter autrement (DM Instagram si elle a donné un compte, sinon lui demander une autre adresse).
+- Accusé de réception : il PART bien en production (envoyé à Gemma, rebond car adresse inactive). Le correctif (alerte à contact@ si Brevo refuse) reste prêt sur la branche, en attente d'accord.
+- Site / Cloudflare / DNS / Brevo / tests : OK. Lucas n'a toujours pas accès au plan de lancement (Drive).
+
 
 ## Check complet du 19/11 (11 h)
 - OK : site (18/18 tests, 6 pages sans erreur), Cloudflare (prod 0a9bace, domaines + SSL actifs), DNS mail (MX, SPF, DKIM IONOS + Brevo, DMARC), Brevo (domaine authentifié, 10/10 mails livrés, 0 rebond), Windsor, ElevenLabs Starter (4 624 / 38 266), GitHub.
