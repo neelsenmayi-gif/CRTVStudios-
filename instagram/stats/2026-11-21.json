@@ -1,0 +1,11 @@
+{
+  "releve": "2026-11-21T11:06+01:00",
+  "profil": {"name": "CRTV STUDIOS | Montage vidéo", "followers_count": 8, "media_count": 3, "bio": "NOUS CRÉONS VOS IDÉES 💡 / CLIPPING... (sans appel à l'action)"},
+  "reels": [
+    {"reel": "01", "permalink": "https://www.instagram.com/reel/Df6ud-thbRg/", "publie": "2026-11-19T10:11+01:00", "views": 226, "reach": 194, "likes": 5, "comments": 0, "shares": 0, "saved": 0, "avg_watch_ms": 6937, "skip_rate": 0.623, "duree_s": 24},
+    {"reel": "05", "permalink": "https://www.instagram.com/reel/Df9wlUutQFO/", "publie": "2026-11-20T14:26+01:00", "views": 169, "reach": 143, "likes": 2, "comments": 0, "shares": 0, "saved": 0, "avg_watch_ms": 5411, "skip_rate": 0.585, "duree_s": 24},
+    {"reel": "01b", "permalink": "https://www.instagram.com/reel/Df_6tdEDIhC/", "publie": "2026-11-21T10:33+01:00", "views": 77, "reach": 0, "likes": 0, "comments": 0, "shares": 0, "saved": 1, "avg_watch_ms": 0, "skip_rate": null, "duree_s": 23, "note": "30 min après publication"}
+  ],
+  "compte_7j": {"19/11": {"reach": 191, "views": 340, "reach_non_followers": 184}, "20/11": {"reach": 1, "views": 14}},
+  "devis_24h": "aucun vrai prospect (20/11 21 h 14 = spam « Gemma », retiré de la liste Brevo)"
+}
