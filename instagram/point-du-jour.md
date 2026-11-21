@@ -3,7 +3,7 @@
 ## Check complet du 21/11 (10 h 35)
 - Instagram : 3 reels en ligne (01 le 19/11, 05 le 20/11 à 14 h 26, 01b le 21/11 à 10 h 33 publié par Claude). 8 abonnés. Nom « CRTV STUDIOS | Montage vidéo » OK ; bio = version de Neelsen (« NOUS CRÉONS VOS IDÉES 💡 » + liste), sans appel à l'action.
 - Stats : 01 = 226 vues, abandon 3 s 62 %, 7,0 s moy. ; 05 = 169 vues, abandon 58,5 %, 5,4 s moy. ; 0 partage, 0 commentaire, 0 abonné gagné.
-- PREMIER PROSPECT : demande de devis Short Solo le 20/11 à 21 h 14 (« Gemma »), reçue sur contact@. Son adresse mail est inactive (rebond Gmail) : la recontacter autrement (DM Instagram si elle a donné un compte, sinon lui demander une autre adresse).
+- « Gemma » (20/11 21 h 14) : PAS un prospect, c'est du démarchage spam (instagrow.business, vente d'abonnés) passé par le formulaire. Ne pas cliquer. Piste : activer Cloudflare Turnstile sur le formulaire (déjà prévu dans le code, clé à créer).
 - Accusé de réception : il PART bien en production (envoyé à Gemma, rebond car adresse inactive). Le correctif (alerte à contact@ si Brevo refuse) reste prêt sur la branche, en attente d'accord.
 - Site / Cloudflare / DNS / Brevo / tests : OK. Lucas n'a toujours pas accès au plan de lancement (Drive).
 
