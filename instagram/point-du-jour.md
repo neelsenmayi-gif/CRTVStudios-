@@ -1,4 +1,7 @@
-# Point du 21/11/2026 (à relire en début de session)
+# Point du 22/11/2026 (check du matin vérifié)
+
+- 01b : tenue 3 s 57 % (vs 38 % et 41 %) → l'accroche visible dès l'image 1 marche (confiance moyenne). Reel 02 non publié. 8 abonnés. Outils OK. Partages au niveau du compte (28 le 20/11, 19 le 21/11) non retrouvés sur les reels : probablement des stories, non vérifié.
+
 
 Tâches priorisées : voir `memoire/taches.md` (fait foi). Mémoire complète : `memoire/memoire-crtv.md`.
 

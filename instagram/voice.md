@@ -189,6 +189,11 @@ Rien de mesuré pour l'instant (premier reel publié le 19/11).
   premier écran doit déjà afficher la promesse (texte lisible dès l'image 1,
   pas de démarrage à vide ni de mots qui apparaissent en flou), s'adresser à
   la cible (« Streamers GTA 6 : … ») plutôt qu'annoncer une actu (« GTA 6
-  débarque »). Supprimer le décalage de 0,2 s au début du rendu. Chaque dimanche :
+  débarque »). Supprimer le décalage de 0,2 s au début du rendu.
+- 22/11 (confiance moyenne, 1 reel contre 2, ~145 personnes touchées chacun) : la nouvelle
+  accroche du 01b (texte lisible dès l'image 1, « Streamers GTA 6 : votre live de 4 h… »)
+  retient 57 % des gens après 3 s, contre 38 % (01) et 41 % (05). À garder. Point faible
+  suivant : le milieu (durée moyenne ~25 % de la vidéo sur les 3 reels) → raccourcir à
+  15-20 s et relancer l'attention toutes les 3-4 s. Chaque dimanche :
 garder les accroches et formats qui retiennent au-delà de 3 s, abandonner ceux
 qui décrochent, noter ici la règle tirée de chaque bilan.
