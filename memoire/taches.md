@@ -6,8 +6,10 @@ Claude propose une priorité pour chaque nouvelle tâche (marquée « proposé �
 Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites passent dans « Fait » avec la date.
 
 ## À faire
-- [ ] [P1] Neelsen — Le reel 02 « Combien vous a coûté » prévu samedi 12 h 10 n'est PAS en ligne (3 publications au compteur) : vérifier la programmation et le publier (ajoutée le 22/11, proposé)
-- [ ] [P1] Neelsen — Programmer le reel 04 Médias et pros ce dimanche 19 h 10 (22/11, proposé)
+- [ ] [P1] Neelsen — Le reel 02 « Combien vous a coûté » prévu samedi 12 h 10 n'est toujours PAS en ligne au 23/11 (3 publications au compteur) : le publier, par ex. mardi 24/11 (ajoutée le 22/11, proposé)
+- [ ] [P1] Neelsen — Reel 04 Médias et pros non publié dimanche : le placer mercredi 25/11 (22/11, proposé)
+- [ ] [P1] Neelsen — Publier le reel 03 Commerces + Luna aujourd'hui 23/11 à 14 h 40 (23/11, proposé)
+- [ ] [P1] Claude — Produire la nouvelle série (reels de 15-20 s, accroche dès l'image 1) : pas faite dimanche, 02 et 04 couvrent mardi et mercredi (23/11, proposé)
 - [ ] [P1] Neelsen — Ajouter « Écrivez DEVIS en DM » dans la bio (ajoutée le 21/11)
 - [ ] [P1] Neelsen + Claude — Configurer ManyChat CLIP / DEVIS par captures d'écran (19/11)
 - [ ] [P1] Neelsen — Répondre en DM à chaque commentaire CLIP / DEVIS dans l'heure (19/11, permanent)

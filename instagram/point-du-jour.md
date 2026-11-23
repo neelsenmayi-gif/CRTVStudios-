@@ -1,3 +1,7 @@
+# Point du 23/11/2026 (check du matin vérifié, 7 h 40)
+
+- 3 reels en ligne seulement : 02 et 04 toujours pas publiés. 03 prévu aujourd'hui 14 h 40. Portée du compte le 22/11 : 4 (rien publié). 01b garde 56 % de tenue à 3 s. 8 abonnés, 0 commentaire. Outils OK. Nouvelle série à produire par Claude.
+
 # Point du 22/11/2026 (check du matin vérifié)
 
 - 01b : tenue 3 s 57 % (vs 38 % et 41 %) → l'accroche visible dès l'image 1 marche (confiance moyenne). Reel 02 non publié. 8 abonnés. Outils OK. Partages au niveau du compte (28 le 20/11, 19 le 21/11) non retrouvés sur les reels : probablement des stories, non vérifié.
