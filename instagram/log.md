@@ -7,7 +7,7 @@
 | 21/11 10:33 (publié par Claude) | 01b GTA 6 nouvelle accroche | « Streamers GTA 6 : votre live de 4 h, personne ne le regarde en entier. » | Callout + douleur | CLIP | publié | à 21 h : 163 vues, portée 144, tenue 3 s 57 %, durée moy. 5,7 s / 23 s, 1 enregistrement | | 0 | 0 |
 | 21/11 12:10 | 02 Combien vous a coûté (NON PUBLIÉ au 23/11 7 h 40) | « Combien vous a coûté votre dernier short ? » | Cost Confession | DEVIS | planifié | | | | |
 | 22/11 19:10 | 04 Médias et pros (NON PUBLIÉ au 23/11 7 h 40) | « Votre meilleur contenu dort dans une vidéo d'une heure. » | Nobody Tells You | DEVIS | planifié | | | | |
-| 23/11 14:40 | 03 Commerces + Luna | « Pas besoin d'une agence de pub pour exister en vidéo. » | Permission | DEVIS | planifié | | | | |
+| 23/11 14:40 | 03 Commerces + Luna (NON PUBLIÉ au 23/11 23 h) | « Pas besoin d'une agence de pub pour exister en vidéo. » | Permission | DEVIS | planifié | | | | |
 
 https://www.instagram.com/reel/Df6ud-thbRg/ (01, publié le 19/11 à 10 h 11)
 

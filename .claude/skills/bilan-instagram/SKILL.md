@@ -69,7 +69,7 @@ mais toujours au minimum ig-audit + ig-plan + ig-story.
   `/v3/smtp/emails/{uuid}`) avant de parler de prospect ; listes 2 et 3 (`/v3/contacts/lists`).
 - **DNS mail** (zone e55d2dda861533f314011f1d5deb2feb) : MX IONOS, SPF, DKIM IONOS + Brevo, DMARC présents.
 - **ElevenLabs** : `account_get_usage` (crédits restants) si le connecteur répond.
-- **Drive** : accès de Lucas au plan de lancement (`get_file_permissions` 1JfL0GVQhEQKCaGO8dwkw0y0Np1R__TuG).
+- **Drive** : accès de Lucas au plan de lancement (`get_file_permissions` sur l'ID ACTUEL noté dans `memoire/memoire-crtv.md` § 5).
 - **Windsor** : répond ? Rappeler la fin de l'essai si elle approche.
 - **ManyChat, Gmail, pub Meta** : état connu dans la mémoire (pas d'API à tester), le rappeler s'il bloque.
 - **Tâches planifiées / fichiers temporaires** : `public/media-temp/` vide sur la branche sauf publication prévue.

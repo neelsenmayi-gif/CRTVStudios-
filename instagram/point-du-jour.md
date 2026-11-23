@@ -1,3 +1,7 @@
+# Check complet du 23/11/2026, 23 h 06 (vérifié)
+
+- Reel 03 non publié non plus (3 publications). Chiffres identiques au matin (01b portée 150). Aucune demande de devis. Plan de lancement mis à jour en Google Sheets (priorités + onglet Instagram) ; reste à le partager avec Lucas.
+
 # Point du 23/11/2026 (check du matin vérifié, 7 h 40)
 
 - 3 reels en ligne seulement : 02 et 04 toujours pas publiés. 03 prévu aujourd'hui 14 h 40. Portée du compte le 22/11 : 4 (rien publié). 01b garde 56 % de tenue à 3 s. 8 abonnés, 0 commentaire. Outils OK. Nouvelle série à produire par Claude.

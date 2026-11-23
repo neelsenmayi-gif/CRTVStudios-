@@ -80,7 +80,7 @@ résume TOUT le reste et pointe vers les détails. Mettre à jour à chaque déc
 | Mail | IONOS contact@crtvstudios.fr (+ copie contact.crtvstudios@gmail.com) | Notifications iPad toujours en suspens |
 | Windsor.ai for Social Media | instagram 17841421474445876 | Essai : 30 j d'historique, pas de rafraîchissement forcé. Publie, gère commentaires, pas de DM |
 | ElevenLabs | Starter (~38 000 crédits/mois) | Voix, effets, musique, transcription |
-| Google Drive (compte CRTV) | Plan de lancement 1JfL0GVQhEQKCaGO8dwkw0y0Np1R__TuG (xlsx, MAJ 19/11) | Ancien : 1SnLw2RlySAmW81n2pqSynfcz7EHmvxpK ; dossier vide 118HXMgDPoptr72vaEp_MNeqCjFkoD3Tl. Lucas sans accès |
+| Google Drive (compte CRTV) | Plan de lancement ACTUEL : Google Sheets 1DjHZUAWWTxWGGG-cwwW8KA2f_exG6-hJnps_taU7cys (MAJ 23/11, colonne Priorité + onglet Instagram) | Le connecteur ne remplace pas un fichier : chaque MAJ = nouveau fichier. Anciens : 1JfL0GVQhEQKCaGO8dwkw0y0Np1R__TuG (19/11), 1SnLw2RlySAmW81n2pqSynfcz7EHmvxpK ; dossier vide 118HXMgDPoptr72vaEp_MNeqCjFkoD3Tl. Lucas sans accès (adresse inconnue) |
 | Gmail (connecteur) | à reconnecter (21/11) | |
 | ManyChat | compte créé 19/11, rien de configuré | L'API ne crée pas d'automatisation : config dans l'interface |
 | Pub Meta | rien | Conseil : Windsor for Paid Media ; il faut page Facebook + compte pub |
