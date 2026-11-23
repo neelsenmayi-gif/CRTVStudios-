@@ -80,6 +80,7 @@ résume TOUT le reste et pointe vers les détails. Mettre à jour à chaque déc
 | Mail | IONOS contact@crtvstudios.fr (+ copie contact.crtvstudios@gmail.com) | Notifications iPad toujours en suspens |
 | Windsor.ai for Social Media | instagram 17841421474445876 | Essai : 30 j d'historique, pas de rafraîchissement forcé. Publie, gère commentaires, pas de DM |
 | ElevenLabs | Starter (~38 000 crédits/mois) | Voix, effets, musique, transcription |
+| **Plan de lancement OFFICIEL** | Claude Sheets (pastilles de statut) https://claude.ai/artifact/RhjpXuSfMgEuWZZs3serfM, partagé avec Lucas qui le modifie aussi | « Mets à jour le plan de lancement » = CE tableau (connecteur Claude Docs, node 4c71ea21-ed6d ; onglets « Plan de lancement » et « Suivi »). Ne jamais écraser les lignes de Lucas : relire avant d'écrire. MAJ complète le 23/11 (rév. 70) |
 | Google Drive (compte CRTV) | Plan de lancement ACTUEL : Google Sheets 1DjHZUAWWTxWGGG-cwwW8KA2f_exG6-hJnps_taU7cys (MAJ 23/11, colonne Priorité + onglet Instagram) | Le connecteur ne remplace pas un fichier : chaque MAJ = nouveau fichier. Anciens : 1JfL0GVQhEQKCaGO8dwkw0y0Np1R__TuG (19/11), 1SnLw2RlySAmW81n2pqSynfcz7EHmvxpK ; dossier vide 118HXMgDPoptr72vaEp_MNeqCjFkoD3Tl. Lucas sans accès (adresse inconnue) |
 | Gmail (connecteur) | à reconnecter (21/11) | |
 | ManyChat | compte créé 19/11, rien de configuré | L'API ne crée pas d'automatisation : config dans l'interface |

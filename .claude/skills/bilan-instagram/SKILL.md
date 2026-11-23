@@ -98,6 +98,7 @@ Ne rien transmettre à Neelsen tant que ces contrôles ne sont pas passés :
 - Présenter les tâches triées P1 → P2 → P3, en séparant Neelsen / Lucas / Claude.
 
 ## 6. Enregistrer
+- Si une tâche change de statut : mettre à jour le plan de lancement OFFICIEL (Claude Sheets, lien dans `memoire/memoire-crtv.md` § 5) en relisant d'abord les lignes de Lucas.
 - Relevé du jour : `instagram/stats/AAAA-MM-JJ.json` = relevé B vérifié (+ `calculs.json` dans `instagram/stats/AAAA-MM-JJ-calculs.json`).
 - Colonnes de `instagram/log.md` (vues 24 h / 7 j, abonnés gagnés, DM reçus).
 - Enseignement net (confiance moyenne ou forte) → « Ce qui marche » de `instagram/voice.md`.

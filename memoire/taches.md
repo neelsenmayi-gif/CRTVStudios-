@@ -13,7 +13,6 @@ Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites pas
 - [ ] [P1] Neelsen — Ajouter « Écrivez DEVIS en DM » dans la bio (ajoutée le 21/11)
 - [ ] [P1] Neelsen + Claude — Configurer ManyChat CLIP / DEVIS par captures d'écran (19/11)
 - [ ] [P1] Neelsen — Répondre en DM à chaque commentaire CLIP / DEVIS dans l'heure (19/11, permanent)
-- [ ] [P2] Neelsen — Partager le plan de lancement (Google Sheets du 23/11) avec Lucas : donner son adresse mail à Claude ou le partager depuis le Drive (19/11)
 - [ ] [P2] Neelsen — Publier les stories à la une Comment ça marche + Réalisations (19/11)
 - [ ] [P2] Neelsen — Compte pro : catégorie Production vidéo + bouton e-mail (19/11)
 - [ ] [P2] Neelsen — Épingler 3 reels (01b, 03 Luna, 02) (19/11)
@@ -34,6 +33,7 @@ Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites pas
 - Chaque dimanche : bilan de la semaine (ig-audit), plan de la semaine (ig-plan), production des reels.
 
 ## Fait
+- [x] 23/11 — Plan de lancement Claude (pastilles) mis à jour par Claude et partagé à Lucas par Neelsen
 - [x] 21/11 — Nom de profil « CRTV STUDIOS | Montage vidéo » (Neelsen)
 - [x] 21/11 — Reel 01b publié (Claude via Windsor), reels 02-03-04 refaits (accroche dès l'image 1)
 - [x] 21/11 — Spam « Gemma » retiré de la liste Brevo
