@@ -17,6 +17,7 @@ Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites pas
 - [ ] [P2] Neelsen — Compte pro : catégorie Production vidéo + bouton e-mail (19/11)
 - [ ] [P2] Neelsen — Épingler 3 reels (01b, 03 Luna, 02) (19/11)
 - [ ] [P2] Neelsen — Demander à Luna Aesthetic un post en collab + accord écrit pour l'extrait (19/11)
+- [ ] [P2] Neelsen + Lucas — Créer la fiche Google « CRTV Studios » (zone desservie, adresse masquée) puis demander un avis à Luna Aesthetic, puis AndrySoGood (idée de Lucas, 23/11, proposé)
 - [ ] [P2] Neelsen — 20 min de commentaires/jour + envoyer 10 comptes cibles à Claude (19/11)
 - [ ] [P2] Neelsen — Feu vert pour le correctif du formulaire (alerte si Brevo refuse) (19/11)
 - [ ] [P2] Lucas — Relire reels, légendes, DM types et planning (19/11)
