@@ -15,3 +15,5 @@ https://www.instagram.com/reel/Df9wlUutQFO/ (05, publié le 20/11 à 14 h 26)
 https://www.instagram.com/reel/Df_6tdEDIhC/ (01b, publié le 21/11 à 10 h 33 par Claude via Windsor)
 
 23/11 7 h 40 (relevé vérifié) : 01 = 229 vues (+2 en 24 h), 05 = 173 (+1), 01b = 171 (+8, tenue 3 s 56 %). 8 abonnés, 3 publications. Portée du compte le 22/11 : 4 (aucune publication ce jour-là).
+
+24/11 7 h 40 (relevé vérifié) : 01 = 235 vues (+6), 05 = 177 (+4), 01b = 174 (+3, tenue 3 s 55 %). 8 abonnés, 46 abonnements (+27 depuis le 23/11), 3 publications : 02, 03, 04 toujours pas en ligne. Portée du compte le 23/11 : 59 (dont 58 non-abonnés) sans nouvelle publication.

@@ -1,3 +1,7 @@
+# Point du 24/11/2026 (check du matin vérifié, 7 h 40)
+
+- Toujours 3 reels (02, 03, 04 pas en ligne). 03 proposé aujourd'hui. +13 vues en 24 h sur les reels, 8 abonnés, 0 commentaire, 0 devis. 46 abonnements (+27) : Neelsen a commencé à suivre des comptes. Portée du 23/11 : 59. Outils OK.
+
 # Check complet du 23/11/2026, 23 h 06 (vérifié)
 
 - Reel 03 non publié non plus (3 publications). Chiffres identiques au matin (01b portée 150). Aucune demande de devis. Plan de lancement mis à jour en Google Sheets (priorités + onglet Instagram) ; reste à le partager avec Lucas.
