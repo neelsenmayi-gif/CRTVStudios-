@@ -1,3 +1,7 @@
+# Point du 25/11/2026 (check du matin vérifié, 7 h 40)
+
+- Toujours 3 reels : le 03 n'est pas sorti mardi. +10 vues en 24 h sur les reels. Portée du compte le 24/11 : 223 (record, sans nouveau reel ; origine non vérifiée). 8 abonnés, 0 commentaire, 0 devis. Outils OK.
+
 # Point du 24/11/2026 (check du matin vérifié, 7 h 40)
 
 - Toujours 3 reels (02, 03, 04 pas en ligne). 03 proposé aujourd'hui. +13 vues en 24 h sur les reels, 8 abonnés, 0 commentaire, 0 devis. 46 abonnements (+27) : Neelsen a commencé à suivre des comptes. Portée du 23/11 : 59. Outils OK.

@@ -8,7 +8,7 @@ Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites pas
 ## À faire
 - [ ] [P1] Neelsen — Le reel 02 « Combien vous a coûté » prévu samedi 12 h 10 n'est toujours PAS en ligne au 23/11 (3 publications au compteur) : le publier, par ex. mardi 24/11 (ajoutée le 22/11, proposé)
 - [ ] [P1] Neelsen — Reel 04 Médias et pros non publié dimanche : le placer mercredi 25/11 (22/11, proposé)
-- [ ] [P1] Neelsen — Reel 03 Commerces + Luna pas en ligne au 23/11 23 h : le publier mardi 24/11 (02 mercredi 25, 04 jeudi 26) (23/11, proposé)
+- [ ] [P1] Neelsen — Reel 03 Commerces + Luna toujours pas en ligne au 25/11 7 h 40 : le publier aujourd'hui (02 jeudi 26, 04 vendredi 27) (23/11, proposé)
 - [ ] [P1] Claude — Produire la nouvelle série (reels de 15-20 s, accroche dès l'image 1) : pas faite dimanche, 02 et 04 couvrent mardi et mercredi (23/11, proposé)
 - [ ] [P1] Neelsen — Ajouter « Écrivez DEVIS en DM » dans la bio (ajoutée le 21/11)
 - [ ] [P1] Neelsen + Claude — Configurer ManyChat CLIP / DEVIS par captures d'écran (19/11)
