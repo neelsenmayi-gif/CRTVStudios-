@@ -6,7 +6,6 @@ Claude propose une priorité pour chaque nouvelle tâche (marquée « proposé �
 Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites passent dans « Fait » avec la date.
 
 ## À faire
-- [ ] [P2] Neelsen — Demander le reclassement de crtvstudios.fr sur FortiGuard (Fortinet bloque le site sur les réseaux d'entreprise équipés) + vérifier en 4G (26/11, proposé)
 - [ ] [P1] Neelsen — Le reel 02 « Combien vous a coûté » prévu samedi 12 h 10 n'est toujours PAS en ligne au 23/11 (3 publications au compteur) : le publier, par ex. mardi 24/11 (ajoutée le 22/11, proposé)
 - [ ] [P1] Neelsen — Reel 04 Médias et pros non publié dimanche : le placer mercredi 25/11 (22/11, proposé)
 - [ ] [P1] Neelsen — Reel 03 Commerces + Luna toujours pas en ligne au 26/11 7 h 40 : le publier aujourd'hui (02 vendredi 27, 04 samedi 28) (23/11, proposé)
@@ -25,6 +24,7 @@ Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites pas
 - [ ] [P3] Neelsen — Choisir le connecteur pub Meta (Windsor for Paid Media conseillé), créer page Facebook + compte pub (20/11)
 - [ ] [P3] Neelsen — Reconnecter le connecteur Gmail dans claude.ai (21/11)
 - [ ] [P3] Neelsen — Supprimer l'ancien plan de lancement et le dossier vide dans le Drive (19/11)
+- [ ] [P3] Neelsen + Lucas — Demander le reclassement de crtvstudios.fr sur FortiGuard (le filtre Fortinet des réseaux d'entreprise bloque le site, cause confirmée le 26/11) : pas urgent, à traiter ensemble plus tard (décision de Neelsen, 26/11)
 - [ ] [P3] Neelsen — Notifications iPad pour contact@ (17/11, en suspens)
 - [ ] [P3] Neelsen — Cloudflare Turnstile si d'autres spams arrivent (21/11, proposé)
 - [ ] [P3] Neelsen + Lucas — Contenu des niveaux YouTube, phrase de remboursement (avant)
