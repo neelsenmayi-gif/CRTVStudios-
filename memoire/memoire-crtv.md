@@ -85,7 +85,9 @@ résume TOUT le reste et pointe vers les détails. Mettre à jour à chaque déc
 | Gmail (connecteur) | à reconnecter (21/11) | |
 | ManyChat | compte créé 19/11, rien de configuré | L'API ne crée pas d'automatisation : config dans l'interface |
 | Pub Meta | rien | Conseil : Windsor for Paid Media ; il faut page Facebook + compte pub |
-| Réseau de l'environnement | elevenlabsusercontent.com autorisé | crtvstudios.fr et pages.dev non joignables d'ici |
+| Réseau de l'environnement | elevenlabsusercontent.com, crtvstudios.fr, www.crtvstudios.fr, crtv-studios.pages.dev, crt.sh autorisés (26/11, accord Neelsen) | Test du certificat : `openssl s_client -proxy <proxy> -connect crtvstudios.fr:443 -servername crtvstudios.fr -showcerts` |
+
+- 26/11 : Neelsen voit « certificat non reconnu » en ouvrant le lien depuis Instagram. Vérifié côté serveur : certificats Google Trust Services WE1 valides (17/11 → 15/02/2027) pour crtvstudios.fr et www, chaîne complète jusqu'à GlobalSign Root, vérification OK, pages en 200. Cause probablement côté téléphone / réseau / app : en attente d'une capture.
 
 ## 6. Formulaire de devis
 - Fonctionne (18/11). Accusé de réception client envoyé (vérifié 20/11). Correctif prêt sur la branche
