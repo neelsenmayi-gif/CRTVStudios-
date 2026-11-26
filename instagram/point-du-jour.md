@@ -1,3 +1,7 @@
+# Point du 26/11/2026 (check du matin vérifié, 7 h 40)
+
+- 10 abonnés (+2). Toujours 3 reels (03 pas sorti mercredi). Portée du compte ~220/jour depuis 2 jours sans nouveau reel (origine non vérifiée). 0 commentaire, 0 devis. Outils OK.
+
 # Point du 25/11/2026 (check du matin vérifié, 7 h 40)
 
 - Toujours 3 reels : le 03 n'est pas sorti mardi. +10 vues en 24 h sur les reels. Portée du compte le 24/11 : 223 (record, sans nouveau reel ; origine non vérifiée). 8 abonnés, 0 commentaire, 0 devis. Outils OK.

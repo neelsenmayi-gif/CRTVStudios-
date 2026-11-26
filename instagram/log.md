@@ -19,3 +19,5 @@ https://www.instagram.com/reel/Df_6tdEDIhC/ (01b, publié le 21/11 à 10 h 33 pa
 24/11 7 h 40 (relevé vérifié) : 01 = 235 vues (+6), 05 = 177 (+4), 01b = 174 (+3, tenue 3 s 55 %). 8 abonnés, 46 abonnements (+27 depuis le 23/11), 3 publications : 02, 03, 04 toujours pas en ligne. Portée du compte le 23/11 : 59 (dont 58 non-abonnés) sans nouvelle publication.
 
 25/11 7 h 40 (relevé vérifié) : 01 = 238 vues (+3), 05 = 181 (+4), 01b = 177 (+3, tenue 3 s 56 %). 8 abonnés, 46 abonnements, 3 publications : 02, 03, 04 toujours pas en ligne. Portée du compte le 24/11 : 223 (100 % non-abonnés) sans nouveau reel — origine non identifiée (stories ? visites de profil ?).
+
+26/11 7 h 40 (relevé vérifié) : 01 = 246 vues (+8), 05 = 183 (+2), 01b = 179 (+2, tenue 3 s 55 %). 10 abonnés (+2, premiers gains depuis le lancement). 3 publications : 02, 03, 04 toujours pas en ligne. Portée du compte : 228 le 24/11, 216 le 25/11 (quasi 100 % non-abonnés), sans nouveau reel ; 7 enregistrements comptés le 25/11 au niveau du compte contre 1 sur les reels — origine non vérifiée.

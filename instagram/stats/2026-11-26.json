@@ -1,0 +1,79 @@
+{
+ "profil": {
+  "name": "CRTV STUDIOS | Montage vidéo",
+  "followers_count": 10,
+  "follows_count": 46,
+  "media_count": 3,
+  "website": "https://crtvstudios.fr/",
+  "bio_cta_devis": false
+ },
+ "reels": [
+  {
+   "media_id": "18061402649802836",
+   "timestamp": "2026-11-19T09:11:03+0000",
+   "media_views": 246,
+   "media_reach": 207,
+   "media_like_count": 5,
+   "media_comments_count": 0,
+   "media_shares": 0,
+   "media_saved": 0,
+   "media_reel_avg_watch_time": 7100,
+   "media_reel_skip_rate": 0.615,
+   "duree_s": 24,
+   "media_permalink": "https://www.instagram.com/reel/Df6ud-thbRg/"
+  },
+  {
+   "media_id": "17993347224071932",
+   "timestamp": "2026-11-20T13:26:50+0000",
+   "media_views": 183,
+   "media_reach": 155,
+   "media_like_count": 2,
+   "media_comments_count": 0,
+   "media_shares": 0,
+   "media_saved": 0,
+   "media_reel_avg_watch_time": 5323,
+   "media_reel_skip_rate": 0.597,
+   "duree_s": 24,
+   "media_permalink": "https://www.instagram.com/reel/Df9wlUutQFO/"
+  },
+  {
+   "media_id": "18155711329542316",
+   "timestamp": "2026-11-21T09:33:33+0000",
+   "media_views": 179,
+   "media_reach": 158,
+   "media_like_count": 2,
+   "media_comments_count": 0,
+   "media_shares": 0,
+   "media_saved": 1,
+   "media_reel_avg_watch_time": 5541,
+   "media_reel_skip_rate": 0.449,
+   "duree_s": 23,
+   "media_permalink": "https://www.instagram.com/reel/Df_6tdEDIhC/"
+  }
+ ],
+ "compte": [
+  {
+   "date": "2026-11-24",
+   "reach": 228,
+   "views": 389,
+   "saves": 4,
+   "reach_followers": 1,
+   "reach_non_followers": 228,
+   "profile_links_taps": 0
+  },
+  {
+   "date": "2026-11-25",
+   "reach": 216,
+   "views": 335,
+   "accounts_engaged": 15,
+   "likes": 8,
+   "comments": 0,
+   "shares": 0,
+   "saves": 7,
+   "reach_followers": 1,
+   "reach_non_followers": 215,
+   "profile_links_taps": 0
+  }
+ ],
+ "commentaires_7j": 0
+}
