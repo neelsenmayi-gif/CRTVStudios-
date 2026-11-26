@@ -6,6 +6,7 @@ Claude propose une priorité pour chaque nouvelle tâche (marquée « proposé �
 Format : `- [ ] [P?] Qui — Tâche (ajoutée le JJ/MM)`. Les tâches faites passent dans « Fait » avec la date.
 
 ## À faire
+- [ ] [P2] Neelsen — Demander le reclassement de crtvstudios.fr sur FortiGuard (Fortinet bloque le site sur les réseaux d'entreprise équipés) + vérifier en 4G (26/11, proposé)
 - [ ] [P1] Neelsen — Le reel 02 « Combien vous a coûté » prévu samedi 12 h 10 n'est toujours PAS en ligne au 23/11 (3 publications au compteur) : le publier, par ex. mardi 24/11 (ajoutée le 22/11, proposé)
 - [ ] [P1] Neelsen — Reel 04 Médias et pros non publié dimanche : le placer mercredi 25/11 (22/11, proposé)
 - [ ] [P1] Neelsen — Reel 03 Commerces + Luna toujours pas en ligne au 26/11 7 h 40 : le publier aujourd'hui (02 vendredi 27, 04 samedi 28) (23/11, proposé)
