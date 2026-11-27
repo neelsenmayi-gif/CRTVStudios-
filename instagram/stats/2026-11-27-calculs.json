@@ -1,0 +1,42 @@
+{
+ "mediane_vues": 185.0,
+ "reels": [
+  {
+   "reel": "18061402649802836",
+   "permalink": "https://www.instagram.com/reel/Df6ud-thbRg/",
+   "vues": 246.0,
+   "portee": 207.0,
+   "tenue_3s": 0.385,
+   "duree_moy_s": 7.1,
+   "duree_moy_pct": 0.3,
+   "partages_par_portee": 0.0,
+   "enreg_par_portee": 0.0,
+   "multiple_mediane": 1.33
+  },
+  {
+   "reel": "17993347224071932",
+   "permalink": "https://www.instagram.com/reel/Df9wlUutQFO/",
+   "vues": 185.0,
+   "portee": 157.0,
+   "tenue_3s": 0.404,
+   "duree_moy_s": 5.3,
+   "duree_moy_pct": 0.22,
+   "partages_par_portee": 0.0,
+   "enreg_par_portee": 0.0,
+   "multiple_mediane": 1.0
+  },
+  {
+   "reel": "18155711329542316",
+   "permalink": "https://www.instagram.com/reel/Df_6tdEDIhC/",
+   "vues": 181.0,
+   "portee": 160.0,
+   "tenue_3s": 0.55,
+   "duree_moy_s": 5.7,
+   "duree_moy_pct": 0.25,
+   "partages_par_portee": 0.0,
+   "enreg_par_portee": 0.0063,
+   "multiple_mediane": 0.98
+  }
+ ],
+ "alertes": []
+}

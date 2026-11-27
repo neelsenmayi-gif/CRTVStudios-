@@ -1,3 +1,7 @@
+# Point du 27/11/2026 (check du matin vérifié, 7 h 40)
+
+- 10 abonnés. Toujours 3 reels (03 pas sorti jeudi). Les reels ne gagnent presque plus rien (+4 vues en 24 h). Portée du compte ~190-225/jour sans nouveau reel (origine non vérifiée). 0 commentaire, 0 devis. Outils OK, certificat du site OK.
+
 # Point du 26/11/2026 (check du matin vérifié, 7 h 40)
 
 - 10 abonnés (+2). Toujours 3 reels (03 pas sorti mercredi). Portée du compte ~220/jour depuis 2 jours sans nouveau reel (origine non vérifiée). 0 commentaire, 0 devis. Outils OK.
